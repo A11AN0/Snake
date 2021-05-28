@@ -1,0 +1,30 @@
+
+.banner {
+    line-height: 0px;
+    text-align: center;  
+}
+
+.intro  {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color: $color-black;
+    height: 600px;
+
+    .about-me {
+        margin: 50px;
+        color: $color-white;
+        font-weight: lighter;
+        font-size: 40px;
+    }
+}
+
+.tech-stack {
+    background-image: url("images/Flight.jpg"); 
+    height: 800px;
+    background-size: 100%;
+    background-position-y: top;
+    margin-top: 0%;
+}
+
+
