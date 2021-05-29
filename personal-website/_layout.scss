@@ -12,18 +12,43 @@
     height: 600px;
 
     .about-me {
-        margin: 50px;
+        margin: 40px;
         color: $color-white;
         font-weight: lighter;
-        font-size: 40px;
+        font-size: 18px;
+        line-height: 2em;
     }
 }
 
+@media screen and (min-width: 480px) {
+    .intro {
+        .about-me {
+            font-size: 22px;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .intro {
+        .about-me {
+            font-size: 28px;
+        }
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .intro .about-me {
+      margin: 150px;
+    }
+  }
+
+
+
 .tech-stack {
-    background-image: url("images/Flight.jpg"); 
+    background-image: url("images/earth-horizon.jpg"); 
     height: 800px;
-    background-size: 100%;
-    background-position-y: top;
+    background-size: cover;
+    background-repeat: no-repeat;
     margin-top: 0%;
 }
 
