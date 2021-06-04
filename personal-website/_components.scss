@@ -16,9 +16,6 @@
 }
 
 
-
-  
-
 .low {
     background-color: $color-black;
 }
@@ -48,5 +45,56 @@
         font-size: 95px;
         right: -49px;
         letter-spacing: 4.5px;
+    }
+  }
+
+  .symbol-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    size: 2em 2em;
+    
+    
+    .symbol {
+        font-size: 500%;
+        color: $color-white;
+    }
+  }
+
+
+  .tech-stack-title {
+    position: relative;
+    top: 8%;
+    font-weight: 300;
+    font-size: 30px;
+    color: $color-white; 
+  }
+
+
+  @media screen and (min-width: 768px) {
+    .symbol-box {
+        .symbol{
+            font-size: 650%;
+        }
+    }
+  }
+
+  @media screen and (min-width: 991px) {
+    .symbol-box {
+        .symbol{
+            font-size: 800%;
+        }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .tech-stack-title {
+        font-size: 40px;
+    }
+  }
+
+  @media screen and (min-width: 991px) {
+    .tech-stack-title {
+        font-size: 50px;
     }
   }

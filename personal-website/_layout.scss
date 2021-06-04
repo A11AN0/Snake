@@ -43,13 +43,71 @@
   }
 
 
-
 .tech-stack {
     background-image: url("images/earth-horizon.jpg"); 
     height: 800px;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 0%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  
+
+    &__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 65%;
+        width: 75%;
+        /* opacity: 40%; */
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 10px;
+        position: relative;
+        top: 8%;
+      }
+        
 }
 
+@media screen and (min-width: 768px) {
+    .tech-stack {
+        &__box {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+  }
+
+.my-projects {
+    background-image: url("images/mountain-galaxy.jpg");
+    height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .project-display {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        top: 10%;
+
+        .project-box {
+            height: 150px;
+            width: 150px;
+            background-color: $color-white;
+            margin: 20px;
+        }
+    }
+}
+
+.contact {
+    background-image: url("images/wave-rock.jpg"); 
+    height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 0%;
+}
 
