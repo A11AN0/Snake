@@ -44,7 +44,7 @@
 
 
 .tech-stack {
-    background-image: url("images/earth-horizon.jpg"); 
+    background-image: url("images/wave-rock.jpg"); 
     height: 800px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -80,7 +80,7 @@
 
 .my-projects {
     background-image: url("images/mountain-galaxy.jpg");
-    height: 800px;
+    height: 900px;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 0%;
@@ -90,24 +90,54 @@
 
     .project-display {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         position: relative;
         top: 10%;
+        width: auto;
+    }
+}
 
-        .project-box {
-            height: 150px;
-            width: 150px;
-            background-color: $color-white;
-            margin: 20px;
+
+@media screen and (min-width: 481px) {
+    .my-projects {
+        .project-display {
+            grid-template-columns: 1fr 1fr;
         }
     }
 }
 
+@media screen and (min-width: 768px) {
+    .my-projects {
+        .project-display {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+
+
 .contact {
-    background-image: url("images/wave-rock.jpg"); 
+    background-image: url("images/earth-horizon.jpg"); 
     height: 800px;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .outro-blurbox {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        height: 63%;
+        width: 75%;
+        position: relative;
+        top: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
 }
 

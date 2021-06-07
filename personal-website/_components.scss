@@ -98,3 +98,111 @@
         font-size: 50px;
     }
   }
+
+  .outro-symbols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 250px;
+    width: 250px;
+    position:relative;
+    top: 25%;
+  }
+
+  
+
+  .project-box {
+    height: 120px;
+    width: 75vw;
+    background-color: $color-white;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 481px) {
+  .project-box {
+      height: 200px;
+      width: 200px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .project-box {
+      height: 220px;
+      width: 220px;
+      margin: 5px;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .project-box {
+      height: 270px;
+      width: 270px;
+      margin: 30px;
+  }
+}
+
+
+.outro {
+  width: 90%;
+}
+
+.outro-text {
+  color: $color-white;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 25px;
+  height: 70%;
+  padding: 0px;
+  margin-top: 70px;
+}
+
+@media screen and (min-width: 768px) {
+  .outro-text {
+      font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .outro-text {
+      font-size: 45px;
+  }
+}
+
+.outro-symbols {
+  width: 90%;
+  bottom: 10%;
+  font-size: 80px; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1em 100px;
+  margin-bottom: 200px; 
+}
+
+@media screen and (min-width: 768px) {
+  .outro-symbols {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.osm {
+  text-align: center;
+  margin: 10px;
+  font-size: 75px;
+  color: $color-white;
+}
+
+@media screen and (min-width: 768px) {
+  .osm {
+      font-size: 120px;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .osm {
+      font-size: 150px;
+  }
+}
+
+
+
+
