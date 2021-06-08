@@ -1,143 +1,42 @@
-
-.banner {
-    line-height: 0px;
-    text-align: center;  
-}
-
-.intro  {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background-color: $color-black;
-    height: 600px;
-
-    .about-me {
-        margin: 40px;
-        color: $color-white;
-        font-weight: lighter;
-        font-size: 18px;
-        line-height: 2em;
-    }
-}
-
-@media screen and (min-width: 480px) {
-    .intro {
-        .about-me {
-            font-size: 22px;
-        }
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .intro {
-        .about-me {
-            font-size: 28px;
-        }
-    }
-}
-
-@media screen and (min-width: 991px) {
-    .intro .about-me {
-      margin: 150px;
-    }
-  }
+// Layout for the responsive navbar 
 
 
-.tech-stack {
-    background-image: url("images/wave-rock.jpg"); 
-    height: 800px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-top: 0%;
+// Layout/setup for the main section elements of the body
+.main {
+
+margin-left: 5rem;
+
+&__intro {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  
-
-    &__box {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        height: 65%;
-        width: 75%;
-        /* opacity: 40%; */
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border-radius: 10px;
-        position: relative;
-        top: 8%;
-      }
-        
+    height: 100vh;
+    
 }
 
-@media screen and (min-width: 768px) {
-    .tech-stack {
-        &__box {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-    }
-  }
-
-.my-projects {
-    background-image: url("images/mountain-galaxy.jpg");
-    height: 900px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-top: 0%;
+&__about-me {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .project-display {
-        display: grid;
-        grid-template-columns: 1fr;
-        position: relative;
-        top: 10%;
-        width: auto;
-    }
-}
-
-
-@media screen and (min-width: 481px) {
-    .my-projects {
-        .project-display {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .my-projects {
-        .project-display {
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-    }
-}
-
-
-.contact {
-    background-image: url("images/earth-horizon.jpg"); 
-    height: 800px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-top: 0%;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-
-    .outro-blurbox {
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        height: 63%;
-        width: 75%;
-        position: relative;
-        top: 5%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-radius: 10px;
-    }
+    height: 100vh;
 }
 
+&__my-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+&__contact-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+}

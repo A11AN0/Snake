@@ -1,208 +1,40 @@
 
-
-
-.hello {
-    
-    color: black;
-    display: inline-block;
-    font-size: 50px;
-    position: relative;
-    line-height: 0.30em;
-    right: 98.5px;
-    /* margin-block-end: 0.3em;
-    margin-block-start: 0.3em; */
-    margin-top: 20px;
-    font-weight: bold;   
+// Introduction Section Components
+.main__intro{
+  &__title {
+    font-size: 7vw;
+  }
 }
 
+// About Me Section Components
+.main__about-me {
+  
+  &__title {
+    font-size: 6vw;
+    margin-bottom: 100px;  
+  }
 
-.low {
-    background-color: $color-black;
+  &__paragraph {
+    width: 60vh;
+    height: 500px;
+  }
 }
-
-.im-allan {
-
-    color: $color-white;
-    display: inline-block;
-    font-size: 55px;
-    position: relative;
-    right: -25px;
-    line-height: 0.82em;
-    /* margin-block-start: 0.3em;
-    margin-block-end: 0.5em;*/
-    margin-bottom: 10px ;
-    font-weight: bold;
-    letter-spacing: 3px;    
-}
-
-@media screen and (min-width: 768px) {
-    .hello {
-        font-size: 90px;
-        right: 162px;
-        line-height: 45px;
-    }
-    .im-allan {
-        font-size: 95px;
-        right: -49px;
-        letter-spacing: 4.5px;
-    }
-  }
-
-  .symbol-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    size: 2em 2em;
-    
-    
-    .symbol {
-        font-size: 500%;
-        color: $color-white;
-    }
-  }
-
-
-  .tech-stack-title {
-    position: relative;
-    top: 8%;
-    font-weight: 300;
-    font-size: 30px;
-    color: $color-white; 
-  }
-
-
-  @media screen and (min-width: 768px) {
-    .symbol-box {
-        .symbol{
-            font-size: 650%;
-        }
-    }
-  }
-
-  @media screen and (min-width: 991px) {
-    .symbol-box {
-        .symbol{
-            font-size: 800%;
-        }
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    .tech-stack-title {
-        font-size: 40px;
-    }
-  }
-
-  @media screen and (min-width: 991px) {
-    .tech-stack-title {
-        font-size: 50px;
-    }
-  }
-
-  .outro-symbols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 250px;
-    width: 250px;
-    position:relative;
-    top: 25%;
-  }
-
   
 
-  .project-box {
-    height: 120px;
-    width: 75vw;
-    background-color: $color-white;
-    margin: 5px;
-    border-radius: 10px;
-}
+// My Projects Section  Components
+.main__my-projects {
 
-@media screen and (min-width: 481px) {
-  .project-box {
-      height: 200px;
-      width: 200px;
+  &__title {
+    font-size: 6vw;
+    margin-bottom: 600px;
   }
 }
 
-@media screen and (min-width: 768px) {
-  .project-box {
-      height: 220px;
-      width: 220px;
-      margin: 5px;
-  }
+// Contact Me Section Components
+.main__contact-me {
+
+  &__title {
+    font-size: 6vw;
+    margin-bottom: 600px;
+  }  
 }
-
-@media screen and (min-width: 991px) {
-  .project-box {
-      height: 270px;
-      width: 270px;
-      margin: 30px;
-  }
-}
-
-
-.outro {
-  width: 90%;
-}
-
-.outro-text {
-  color: $color-white;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 25px;
-  height: 70%;
-  padding: 0px;
-  margin-top: 70px;
-}
-
-@media screen and (min-width: 768px) {
-  .outro-text {
-      font-size: 30px;
-  }
-}
-
-@media screen and (min-width: 991px) {
-  .outro-text {
-      font-size: 45px;
-  }
-}
-
-.outro-symbols {
-  width: 90%;
-  bottom: 10%;
-  font-size: 80px; 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1em 100px;
-  margin-bottom: 200px; 
-}
-
-@media screen and (min-width: 768px) {
-  .outro-symbols {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-
-.osm {
-  text-align: center;
-  margin: 10px;
-  font-size: 75px;
-  color: $color-white;
-}
-
-@media screen and (min-width: 768px) {
-  .osm {
-      font-size: 120px;
-  }
-}
-
-@media screen and (min-width: 991px) {
-  .osm {
-      font-size: 150px;
-  }
-}
-
-
-
-
