@@ -1,6 +1,6 @@
 
 // Introduction Section Components
-.main__intro{
+.main__intro {
   &__title {
     font-size: 7vw;
   }
@@ -15,8 +15,9 @@
   }
 
   &__paragraph {
-    width: 60vh;
-    height: 500px;
+    width: 40vw;
+    height: 1em;
+    font-size: 20px;
   }
 }
   
@@ -38,3 +39,4 @@
     margin-bottom: 600px;
   }  
 }
+
