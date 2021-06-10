@@ -3,9 +3,11 @@
 .navbar {
 
     position: fixed;
-    background-color: $BGcolor-primary;
     overflow: scroll;
     transition: 600ms ease;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 2;
 }
 
 
@@ -28,15 +30,14 @@
     display: flex;
     align-items: center;
     height: 5rem;
-    color: var(--text-primary);
+    color: $color-title-secondary;
     text-decoration: none;
     filter: grayscale(100%) opacity(0.7);
     transition: 600ms ease;;
   
     &:hover {
       filter: grayscale(0%) opacity(1);
-      background: var(--bg-secondary);
-      color: var(--text-secondary);
+      color: $color-title;
     }
   
     svg {
@@ -98,7 +99,7 @@
   }
 
   /* Small screens */
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .navbar {
       bottom: 0;
       width: 100vw;
@@ -124,7 +125,7 @@
   }
   
   /* Large screens */
-  @media only screen and (min-width: 600px) {
+  @media screen and (min-width: 600px) {
     .navbar {
       top: 0;
       width: 5rem;
