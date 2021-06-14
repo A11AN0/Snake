@@ -10,6 +10,7 @@
 // About Me Section Components
 .main__about-me {
   
+  
   &__title {
     font-size: 6vw;
     margin-bottom: auto;
@@ -26,8 +27,17 @@
     overflow-y: hidden;
     overflow-x: auto;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 10px;
     z-index: 1;
+    scroll-snap-type:x mandatory;
+
+    &::-webkit-scrollbar {
+      display: none;
+  }
+  
+    &::-webkit-scrollbar-thumb {
+      display: none ;
+    }
 
     &__description {
       color: $color-text;
@@ -37,8 +47,12 @@
       width: 100%;
       flex-shrink: 0;
       border-radius: 10px;
-      -webkit-backdrop-filter: blur(20px);
-      backdrop-filter: blur(20px);
+      scroll-snap-align: start;
+
+      &__title {
+        text-align: center;
+        margin-top: 1em;
+      }
     }
 
     &__tech-stack {
@@ -47,17 +61,22 @@
       height: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1em;
       width: 100%;
       flex-shrink: 0;
       margin-left: 5%;
       border-radius: 10px;
-      -webkit-backdrop-filter: blur(20px);
-      backdrop-filter: blur(20px);
+      scroll-snap-align: start;
 
       &__symbol {
         text-align: center;
       }
-      
+
+      &__title {
+        grid-column: span 2;
+        text-align: center;
+        margin-top: 1em;
+      } 
     }
 
     &__skills {
@@ -66,8 +85,14 @@
       flex-shrink: 0;
       margin-left: 5%;
       border-radius: 10px;
-      -webkit-backdrop-filter: blur(20px);
-      backdrop-filter: blur(20px);
+      scroll-snap-align: start;
+
+      &__title {
+        text-align: center;
+        width: 100%;
+        color: $color-title;
+        margin-top: 1em;
+      }
     }
   }
 }
@@ -78,17 +103,109 @@
     &__description {
       font-size: 2.5vw;
     }
+
+    &__tech-stack {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+
+      &__title {
+        grid-column: span 4;
+      }
+    }
   }
 }
   
 
 // My Projects Section  Components
 .main__my-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   &__title {
     font-size: 6vw;
     margin-bottom: auto;
     color: $color-title;
+  }
+
+  &__h-container {
+    margin-bottom: 100px;
+    width: 74%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-y: hidden;
+    overflow-x: auto;
+    align-items: center;
+    border-radius: 10px;
+    z-index: 1;
+    scroll-snap-type:x mandatory;
+
+    &::-webkit-scrollbar {
+      display: none;
+  }
+  
+    &::-webkit-scrollbar-thumb {
+      display: none ;
+    }
+    
+
+    &__column {
+      height: 100%;
+      line-height: 2em;
+      width: 100%;
+      flex-shrink: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      scroll-snap-align: start;
+      align-items: center;
+      justify-items: center;
+
+      &__project-box {
+        background-color: white;
+        width: 200px;
+        height: 200px;
+        margin: 1px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 581px) {
+  .main__my-projects {
+
+    &__h-container {
+
+      &__column {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .main__my-projects {
+
+    &__h-container {
+
+      &__column {
+        width: 33.33%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main__my-projects {
+
+    &__h-container {
+
+      &__column {
+        width: 25%;
+      }
+    }
   }
 }
 
@@ -99,6 +216,58 @@
     font-size: 6vw;
     margin-bottom: 600px;
     color: $color-title;
-  }  
+    margin-bottom: auto;
+  }
+
+  &__text {
+    font-size: 5vw;
+    margin-bottom: auto;
+    color: $color-title;
+    line-height: 2em;
+    width: 74%;
+    margin-bottom: 50px;
+  }
+  
+  &__symbol-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 60vw;
+    width: 60vw;
+    margin-bottom: auto;
+    font-size: 25vw;
+    color: $color-title;
+    align-items: center;
+    justify-items: center;
+  }
 }
 
+@media screen and (min-width: 481px) {
+  .main__contact-me {
+
+    &__text {
+      font-size: 25px;  
+    }
+
+    &__symbol-container {
+      font-size: 110px;
+      height: 285px;
+      width: 285px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main__contact-me {
+
+    &__text {
+      font-size: 25px;  
+    }
+
+    &__symbol-container {
+      font-size: 110px;
+      height: 285px;
+      width: 70%;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}

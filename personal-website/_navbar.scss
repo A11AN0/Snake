@@ -5,8 +5,8 @@
     position: fixed;
     overflow: scroll;
     transition: 600ms ease;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     z-index: 2;
 }
 
@@ -30,14 +30,14 @@
     display: flex;
     align-items: center;
     height: 5rem;
-    color: $color-title-secondary;
+    color: $color-title;
     text-decoration: none;
     filter: grayscale(100%) opacity(0.7);
     transition: 600ms ease;;
   
     &:hover {
       filter: grayscale(0%) opacity(1);
-      color: $color-title;
+      color: rgb(114, 42, 230);
     }
   
     svg {
