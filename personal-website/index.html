@@ -8,16 +8,15 @@
     <link rel="stylesheet" href="main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/37b91f1ac7.js" crossorigin="anonymous"></script>
+    <!-- font awesome js makes website slow to load, is there an alternative, noticed same for f-box extension? -->
     <title>Allan's Portfolio</title>
 </head>
 <body>
-
-
     <nav class="navbar">
         <ul class="navbar-nav">
           <li class="logo">
-            <a href="#" class="nav-link">
-              <span class="link-text logo-text">Allan</span>
+            <a href="#allan" class="nav-link">
+              <span class="link-text logo-text">Allan.O</span>
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -26,8 +25,7 @@
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
-                class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"
-              >
+                class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x">
                 <g class="fa-group">
                   <path
                     fill="currentColor"
@@ -43,9 +41,9 @@
               </svg>
             </a>
           </li>
-    
+
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#about" class="nav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -54,8 +52,7 @@
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
-                class="svg-inline--fa fa-cat fa-w-16 fa-9x"
-              >
+                class="svg-inline--fa fa-cat fa-w-16 fa-9x">
                 <g class="fa-group">
                   <path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"
                     class="fa-secondary"
@@ -68,9 +65,8 @@
               <span class="link-text">About Me</span>
             </a>
           </li>
-    
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#projects" class="nav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -79,8 +75,7 @@
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 576 512"
-                class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x"
-              >
+                class="svg-inline--fa fa-alien-monster fa-w-18 fa-9x">
                 <g class="fa-group">
                   <path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M502.63 214.63l-45.25-45.25c-6-6-14.14-9.37-22.63-9.37H384V80c0-26.51-21.49-48-48-48H176c-26.51 0-48 21.49-48 48v80H77.25c-8.49 0-16.62 3.37-22.63 9.37L9.37 214.63c-6 6-9.37 14.14-9.37 22.63V320h128v-16c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v16h128v-16c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v16h128v-82.75c0-8.48-3.37-16.62-9.37-22.62zM320 160H192V96h128v64zm64 208c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-16H192v16c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-16H0v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96H384v16z"
                     class="fa-secondary"
@@ -93,9 +88,8 @@
               <span class="link-text">My Projects</span>
             </a>
           </li>
-    
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#contact" class="nav-link">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -104,8 +98,7 @@
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
-                class="svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x"
-              >
+                class="svg-inline--fa fa-space-station-moon-alt fa-w-16 fa-5x">
                 <g class="fa-group">
                   <path xmlns="http://www.w3.org/2000/svg" fill="currentColor" d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"
                     class="fa-secondary"
@@ -121,47 +114,46 @@
         </ul>
       </nav>
 
-
     <main class="main">
-        <div class="main__intro">
+      <div class="main__intro" id="allan">
         <h1 class="main__intro__title">
             Hello, I'm Allan.
         </h1>
-    </div>
-    <div class="main__about-me">
-        <h1 class="main__about-me__title">
+      </div>
+      <section class="main__about-me">
+        <h1 class="main__about-me__title" id="about">
             About Me.
         </h1>
         <div class="main__about-me__h-container">
           <div class="main__about-me__h-container__description">
-            <h4 class="main__about-me__h-container__description__title">What's the story, dory?</h4>
-            An Australian junior software developer undertaking a self-funded software development program with _nology 
-            under Opus recruitment services. Highly driven, adaptable, personable, team-oriented  and experienced in React, 
-            Javascript, node.js and HTML5 among various other essential elements of software design. I will go above and beyond 
+            <!-- <h4 class="main__about-me__h-container__description__title">& My Story</h4> -->
+            <div class="main__about-me__h-container__description__text">
+            I'm an Australian trainee junior developer undertaking a self-funded software development program with _Nology. 
+            Highly driven, adaptable, personable, team-oriented  and experienced in React, 
+            Javascript, node.js and HTML5 among various other essential elements of software design (eventually lol). I will go above and beyond 
             to deliver a polished and functional product for customer and corporation alike .
+            </div>
           </div>
-
           <div class="main__about-me__h-container__tech-stack">
-            <h4 class="main__about-me__h-container__tech-stack__title">Tech Stack</h4>
-            <i class="fab fa-html5 symbol main__about-me__h-container__tech-stack__symbol "></i>
-            <i class="fab fa-css3-alt symbol main__about-me__h-container__tech-stack__symbol"></i>
-            <i class="fab fa-sass symbol main__about-me__h-container__tech-stack__symbol"></i>
-            <i class="fab fa-js-square symbol main__about-me__h-container__tech-stack__symbol"></i>
-            <i class="fab fa-react symbol main__about-me__h-container__tech-stack__symbol"></i>
-            <i class="fas fa-code-branch symbol main__about-me__h-container__tech-stack__symbol"></i>
-            <i class="fas fa-code-branch symbol main__about-me__h-container__tech-stack__symbol"></i>
-            <i class="fab fa-yarn symbol main__about-me__h-container__tech-stack__symbol"></i>
+            <div class="main__about-me__h-container__tech-stack__box">
+              <h4 class="main__about-me__h-container__tech-stack__box__title">& My Tech Stack</h4>
+              <i class="fab fa-html5 symbol main__about-me__h-container__tech-stack__box__symbol "></i>
+              <i class="fab fa-css3-alt symbol main__about-me__h-container__tech-stack__box__symbol"></i>
+              <i class="fab fa-sass symbol main__about-me__h-container__tech-stack__box__symbol"></i>
+              <i class="fab fa-js-square symbol main__about-me__h-container__tech-stack__box__symbol"></i>
+              <i class="fab fa-react symbol main__about-me__h-container__tech-stack__box__symbol"></i>
+              <i class="fas fa-code-branch symbol main__about-me__h-container__tech-stack__box__symbol"></i>
+              <i class="fas fa-code-branch symbol main__about-me__h-container__tech-stack__box__symbol"></i>
+              <i class="fab fa-yarn symbol main__about-me__h-container__tech-stack__box__symbol"></i>
+            </div>
           </div>
 
-          <div class="main__about-me__h-container__skills">
-            <h4 class="main__about-me__h-container__skills__title">Skills</h4> 
-          </div>
-        </div>
-        
-    </div>
+          
 
-    <div class="main__my-projects">
-            <h1 class="main__my-projects__title">
+        </div>  
+      </section>
+      <div class="main__my-projects">
+            <h1 class="main__my-projects__title" id="projects">
                 My Projects.
             </h1>
             <div class="main__my-projects__h-container">
@@ -189,24 +181,24 @@
                 <div class="main__my-projects__h-container__column__project-box"></div>
                 <div class="main__my-projects__h-container__column__project-box"></div>
               </div>  
-            </div>
+      </div>
 
-    </div>
-    <div class="main__contact-me">
-            <h1 class="main__contact-me__title">
+      </div>
+      <div class="main__contact-me">
+            <h1 class="main__contact-me__title" id="contact">
                 Contact Me.
             </h1>
             <div class="main__contact-me__text">
-              "Whether it's business in the front or a party in the back..end, let's work together"
+              "Whether it's business in the front, or a party in the back..end, <u>let's work together</u>"
             </div>
             <div class="main__contact-me__symbol-container">
-              <i class="fab fa-linkedin"></i>
-              <i class="fas fa-user"></i>
-              <i class="fab fa-github"></i>
-              <i class="fas fa-envelope"></i>
+              <a href="https://www.linkedin.com/in/allan-odunga-309710212" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.WordPress.com" target="_blank"><i class="fas fa-user"></i></a>
+              <a href="https://github.com/A11AN0" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://www.WordPress.com" target="_blank"><i class="fas fa-envelope"></i></a>
             </div>
 
-    </div>
+      </div>
     </main>
 </body>
 </html>

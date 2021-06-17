@@ -2,8 +2,9 @@
 // Introduction Section Components
 .main__intro {
   &__title {
-    font-size: 7vw;
+    font-size: 11vw;
     color: $color-title;
+    font-weight: 300;
   }
 }
 
@@ -12,20 +13,22 @@
   
   
   &__title {
-    font-size: 6vw;
-    margin-bottom: auto;
-    color: $color-title;  
+    font-size: 8vw;
+    margin-bottom: 10px;
+    color: $color-title;
+    font-weight: 200;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+     
   }
 
   &__h-container {
-    margin-bottom: 100px;
-    width: 74%;
-    height: 75%;
+    width: 100%;
+    height: fit-content;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    overflow-y: hidden;
     overflow-x: auto;
+    overflow-y: hidden;
     align-items: center;
     border-radius: 10px;
     z-index: 1;
@@ -33,83 +36,191 @@
 
     &::-webkit-scrollbar {
       display: none;
-  }
+    }
   
     &::-webkit-scrollbar-thumb {
       display: none ;
     }
 
     &__description {
-      color: $color-text;
-      font-size: 3.2vw;
-      height: 100%;
-      line-height: 2em;
+      
+      
+      height: fit-content;
       width: 100%;
       flex-shrink: 0;
-      border-radius: 10px;
       scroll-snap-align: start;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-items: center;
 
       &__title {
+        color: $color-title;
         text-align: center;
-        margin-top: 1em;
+        font-size: 5vw;
+        font-weight: 250;
       }
+      
+     
+
+      &__text {
+        color: $color-title;
+        height: fit-content;
+        width: 74%;
+        font-size: 5vw;
+        line-height: 2em;
+        text-align: center;
+        font-weight: 300;
+      }
+    
     }
 
     &__tech-stack {
-      color: $color-text;
-      font-size: 7vw;
-      height: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1em;
+      
+      font-size: 20vw;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
       width: 100%;
       flex-shrink: 0;
       margin-left: 5%;
       border-radius: 10px;
       scroll-snap-align: start;
+      margin-bottom: 20%;
 
-      &__symbol {
-        text-align: center;
-      }
+      &__box {
+        color: $color-title;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.7em;
+        grid-auto-rows: 1.3em;
+        width: 74%;
 
-      &__title {
-        grid-column: span 2;
-        text-align: center;
-        margin-top: 1em;
+        &__symbol {
+          text-align: center;
+        }
+
+        &__title {
+          grid-column: span 2;
+          text-align: center;
+          margin:10px;
+          line-height: 1em;
+          font-size: 5vw;
+          font-weight: 250;
+        }
       } 
     }
 
-    &__skills {
-      height: 100%;
-      width: 100%;
-      flex-shrink: 0;
-      margin-left: 5%;
-      border-radius: 10px;
-      scroll-snap-align: start;
+    
+  }
+}
 
-      &__title {
-        text-align: center;
-        width: 100%;
-        color: $color-title;
-        margin-top: 1em;
+@media screen and (min-width: 481px) {
+  .main__about-me {
+    
+    
+    &__h-container {
+      &__description {
+        &__text {
+          font-size: 25px;
+          
+        }
       }
+
+      &__tech-stack {
+        font-size: 100px;
+        &__box {
+          grid-template-columns: 1fr 1fr 1fr;
+          
+          &__title {
+            grid-column: span 3;
+          }
+        }
+      }
+  
     }
   }
 }
 
+
+
 @media screen and (min-width: 768px) {
-  .main__about-me__h-container {
-
-    &__description {
-      font-size: 2.5vw;
+  .main__about-me {
+    &__title {
+      margin-left: 5rem;
     }
+    
+    &__h-container {
+      &__description {
+        &__title {
+          font-size: 3.5vw;
+        }
 
-    &__tech-stack {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-
-      &__title {
-        grid-column: span 4;
+        &__text {
+          font-size: 3.5vw;
+          margin-left: 5rem;
+        }
       }
+
+      &__tech-stack {
+        &__box {
+          grid-template-columns: 1fr 1fr 1fr;
+          margin-left: 5rem;
+          &__title {
+            grid-column: span 3;
+            font-size: 3.5vw;
+          }
+        }
+      }
+
+       
+    }
+  }
+}
+
+
+
+@media screen and (min-width: 991px) {
+  .main__about-me {
+    
+    
+    &__h-container {
+      &__description {
+        &__text {
+          font-size: 3.15vw;
+          
+        }
+      }
+
+      &__tech-stack {
+        font-size: 135px;
+        margin-top: auto;
+        &__box {
+          grid-template-columns: 1fr 1fr 1fr;
+          
+          &__title {
+            grid-column: span 3;
+          }
+        }
+      }
+  
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .main__about-me {
+    
+    
+    &__h-container {
+      &__description {
+        &__text {
+          font-size: 35px;
+          
+        }
+      }
+  
     }
   }
 }
@@ -123,15 +234,18 @@
   justify-content: center;
 
   &__title {
-    font-size: 6vw;
-    margin-bottom: auto;
+    font-size: 8vw;
+    margin-bottom: 10px;
     color: $color-title;
+    font-weight: 200;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
   }
 
   &__h-container {
     margin-bottom: 100px;
-    width: 74%;
-    height: 80%;
+    width: 80%;
+    height: 65%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -141,6 +255,9 @@
     border-radius: 10px;
     z-index: 1;
     scroll-snap-type:x mandatory;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: white dashed 5px;
 
     &::-webkit-scrollbar {
       display: none;
@@ -163,9 +280,9 @@
       justify-items: center;
 
       &__project-box {
-        background-color: white;
-        width: 200px;
-        height: 200px;
+        background-color: $color-title;
+        width: 220px;
+        height: 220px;
         margin: 1px;
         border-radius: 5px;
       }
@@ -173,7 +290,7 @@
   }
 }
 
-@media screen and (min-width: 581px) {
+@media screen and (min-width: 768px) {
   .main__my-projects {
 
     &__h-container {
@@ -197,7 +314,7 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .main__my-projects {
 
     &__h-container {
@@ -213,39 +330,57 @@
 .main__contact-me {
 
   &__title {
-    font-size: 6vw;
-    margin-bottom: 600px;
+    font-size: 8vw;
+    margin-bottom: 10px;
     color: $color-title;
-    margin-bottom: auto;
+    font-weight: 200;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
   }
 
   &__text {
     font-size: 5vw;
+    font-weight: 250;
+    font-style: italic;
     margin-bottom: auto;
     color: $color-title;
     line-height: 2em;
     width: 74%;
     margin-bottom: 50px;
+
   }
   
   &__symbol-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 60vw;
-    width: 60vw;
+    height: 70vw;
+    width: 70vw;
     margin-bottom: auto;
     font-size: 25vw;
     color: $color-title;
     align-items: center;
     justify-items: center;
+    
+    
+
+    * {
+      transition: 300ms ease;
+      text-decoration: none;
+      &:hover {
+        font-size: larger;
+        transition: 300ms ease;  
+      }
+
+    }
   }
 }
+// hover acts weird :(
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 480px) {
   .main__contact-me {
 
     &__text {
-      font-size: 25px;  
+      font-size: 4.5vw;  
     }
 
     &__symbol-container {
@@ -259,8 +394,10 @@
 @media screen and (min-width: 768px) {
   .main__contact-me {
 
+    
+
     &__text {
-      font-size: 25px;  
+      font-size: 3.8vw;  
     }
 
     &__symbol-container {

@@ -1,13 +1,21 @@
 // Layout/setup for the main section elements of the body
 
+html {
+    height: 100%;
+    // scroll-behavior: smooth;  didn;t work :(
+}
+
 body {
-    background-image: url("images/shiny.jpg");
+    background-image: url("images/pastel.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
     background-attachment: fixed;
-    height: 100vh;
+    height: 100%;
     overflow-x: hidden;
+    min-height: 800px;
+    
+    
     &::-webkit-scrollbar {
         display: none;
     }
@@ -22,6 +30,9 @@ body {
 .main {
 
     margin-left: 5rem;
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    
 
 
     &__intro {
@@ -29,7 +40,9 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        height: 100%;
+        
+
     }
 
     &__about-me {
@@ -37,8 +50,11 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        height: 100%;
+        width: 100%;
+        
     }
+
         
 
     &__my-projects {
@@ -46,7 +62,8 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;   
+        height: 100%;
+         
     }
 
     &__contact-me {
@@ -54,8 +71,19 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;   
+        height: 90%;
+       
     }
 
 }
+
+@media screen and (min-width: 768px) {
+    .main {
+        &__about-me {
+            margin-left: -5rem;
+            width: 100vw;
+        }        
+    }
+}
+
 
