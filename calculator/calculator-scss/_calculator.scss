@@ -1,0 +1,19 @@
+
+.calc {
+    width: 80%;
+
+    &__keypad {
+        display: grid;
+        background-color: aqua;
+        grid-template-areas: 
+            "seven eight nine divide" 
+            "four five six x"
+            "one two three minus"
+            "zero zero dot plus"
+            "equal equal equal equal" 
+            }
+}
+
+.button {
+    height: 100px;
+}

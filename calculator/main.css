@@ -1,0 +1,88 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0px;
+}
+
+.calc {
+  width: 80%;
+}
+.calc__keypad {
+  display: grid;
+  background-color: aqua;
+  grid-template-areas: "seven eight nine divide" "four five six x" "one two three minus" "zero zero dot plus" "equal equal equal equal";
+}
+
+.button {
+  height: 100px;
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+#dot {
+  grid-area: dot;
+}
+
+#x {
+  grid-area: x;
+}
+
+#plus {
+  grid-area: plus;
+}
+
+#minus {
+  grid-area: minus;
+}
+
+#equal {
+  grid-area: equal;
+}
+
+#divide {
+  grid-area: divide;
+}
