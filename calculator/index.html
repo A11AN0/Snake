@@ -16,12 +16,15 @@
             decided to split both the calc display and calc keyboard into separate divs,
             planning to use grid template columns and rows to separate the keypad-->
         <div class="calc"> 
-            <div class="calc__display"></div>
+            <div class="calc__display">
+                <div class="calc__display__output">2456</div>
+                <div class="calc__display__history">234</div>
+            </div>
             <div class="calc__keypad">
                 <div class="button" id="seven">7</div>
-                <div class="button" id="eight">8</div>
+                <div class="button" id="eight" >8</div>
                 <div class="button" id="nine">9</div>
-                <div class="button" id="divide">/</div>
+                <div class="button" id="divide">÷</div>
                 <div class="button" id="four">4</div>
                 <div class="button" id="five">5</div>
                 <div class="button" id="six">6</div>
@@ -40,6 +43,18 @@
         
         <!--END CALCULATOR SECTION-->
     </main>
-    
+
+    <script>
+        // Trying to make a function that records all the number keys when pressed
+        // And then will make a function that logs all the operator keys (+ - / x . =)
+        // Achieved! - this was done by looking at past examples and also memory XD.
+        const allKeys = document.querySelectorAll(".button");
+        allKeys.forEach((key) =>{
+            key.addEventListener("click", () =>{
+                console.log(key.innerHTML);
+            })
+        })
+
+    </script>
 </body>
 </html>
