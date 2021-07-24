@@ -17,14 +17,13 @@
             planning to use grid template columns and rows to separate the keypad-->
         <div class="calc"> 
             <div class="calc__display">
-                <div class="calc__display__output">2456</div>
-                <div class="calc__display__history">234</div>
+                <div class="calc__display__output"></div>
             </div>
             <div class="calc__keypad">
                 <div class="button" id="seven">7</div>
                 <div class="button" id="eight" >8</div>
                 <div class="button" id="nine">9</div>
-                <div class="button" id="divide">÷</div>
+                <div class="button" id="divide">/</div>
                 <div class="button" id="four">4</div>
                 <div class="button" id="five">5</div>
                 <div class="button" id="six">6</div>
@@ -45,16 +44,32 @@
     </main>
 
     <script>
-        // Trying to make a function that records all the number keys when pressed
-        // And then will make a function that logs all the operator keys (+ - / x . =)
-        // Achieved! - this was done by looking at past examples and also memory XD.
+        // 1. Trying to make a function that records all the number keys when pressed
+        // 2. And then will make a function that logs all the operator keys (+ - / x . =)
+        
+        
         const allKeys = document.querySelectorAll(".button");
-        allKeys.forEach((key) =>{
-            key.addEventListener("click", () =>{
-                console.log(key.innerHTML);
+        const textBox = document.querySelector(".calc__display__output");
+        
+        function logKeys(){
+            allKeys.forEach((key) =>{
+                key.addEventListener("click", () =>{
+                    textBox.innerText += key.innerText;
+                })
             })
-        })
+        }
+        /* 3. Now the next step is trying to make, the input appear in the input box!
+        This was easily done by incorporating the textBox.innerText = key.innerText; into the 
+        function logKeys() ! */
 
+        /* 4. Now I aim to make more than one number appear at a time XD, this was done by
+        making the = operator in line 57 into +=' 
+        inspo from https://stackoverflow.com/questions/50748153/basic-calculator-how-to-make-buttons-input-value-to-text-field*/
+
+
+        logKeys();
+
+    
     </script>
 </body>
 </html>
