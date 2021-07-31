@@ -2,74 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Allan's Javascript Calculator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
 </head>
 <body>
-    <main>
-        <header>
-            <h1>Calculator</h1>
-        </header>
-        <!--Entire Calc section below, 
-            decided to split both the calc display and calc keyboard into separate divs,
-            planning to use grid template columns and rows to separate the keypad-->
-        <div class="calc"> 
-            <div class="calc__display">
-                <div class="calc__display__output"></div>
-            </div>
-            <div class="calc__keypad">
-                <div class="button" id="seven">7</div>
-                <div class="button" id="eight" >8</div>
-                <div class="button" id="nine">9</div>
-                <div class="button" id="divide">/</div>
-                <div class="button" id="four">4</div>
-                <div class="button" id="five">5</div>
-                <div class="button" id="six">6</div>
-                <div class="button" id="x">x</div>
-                <div class="button" id="one">1</div>
-                <div class="button" id="two">2</div>
-                <div class="button" id="three">3</div>
-                <div class="button" id="minus">-</div>
-                <div class="button" id="zero">0</div>
-                <div class="button" id="dot">.</div>
-                <div class="button" id="plus">+</div>
-                <div class="button" id="equal">=</div>
-                
-            </div>
-        </div>
-        
-        <!--END CALCULATOR SECTION-->
-    </main>
-
-    <script>
-        // 1. Trying to make a function that records all the number keys when pressed
-        // 2. And then will make a function that logs all the operator keys (+ - / x . =)
-        
-        
-        const allKeys = document.querySelectorAll(".button");
-        const textBox = document.querySelector(".calc__display__output");
-        
-        function logKeys(){
-            allKeys.forEach((key) =>{
-                key.addEventListener("click", () =>{
-                    textBox.innerText += key.innerText;
-                })
-            })
-        }
-        /* 3. Now the next step is trying to make, the input appear in the input box!
-        This was easily done by incorporating the textBox.innerText = key.innerText; into the 
-        function logKeys() ! */
-
-        /* 4. Now I aim to make more than one number appear at a time XD, this was done by
-        making the = operator in line 57 into +=' 
-        inspo from https://stackoverflow.com/questions/50748153/basic-calculator-how-to-make-buttons-input-value-to-text-field*/
-
-
-        logKeys();
-
     
-    </script>
 </body>
 </html>
