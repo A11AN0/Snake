@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="calculator">
-        <div class="calculator__display"></div>
+        <div class="calculator__display">0</div>
         <div class="calculator__keys">
             <button class="key__operator" data-action="add">+</button>
             <button class="key__operator" data-action="subtract">-</button>
@@ -24,14 +24,52 @@
             <button>2</button>
             <button>3</button>
             <button>0</button>
-            <button data-action="decimal;">.</button>
+            <button data-action="decimal">.</button>
             <button data-action="clear">C</button>
             <button class= "key__equal" data-action="calculate">=</button>
         </div>
     </div>
     <script>
+        // Declared constants for keys and calculator
         const calculator = document.querySelector(".calculator")
         const keys = document.querySelector(".calculator__keys");
+
+        keys.addEventListener("click", event =>{
+            if(event.target.matches("button")){ 
+                const key = event.target
+                const action = key.dataset.action
+
+                if(!action){
+                    console.log("number key!");
+                }
+
+                if(
+                    action == "add" ||
+                    action == "subtract"||
+                    action == "multiply"||
+                    action == "divide"
+                ){
+                 console.log("operator key!");
+                }
+
+                if(action === "decimal") {
+                    console.log("decimal key!")
+                }
+
+                if (action === "clear"){
+                    console.log("clear key!")
+                }
+
+                if (action === "calculate") {
+                    console.log("equal key!")
+                }
+
+
+        
+            }
+        })
+
+
         
     </script>
     
