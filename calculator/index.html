@@ -30,6 +30,8 @@
         </div>
     </div>
     <script>
+
+        /*THIS SECTION OF CODE  IS FOR LOGGING THE CALCULATOR KEYS */
         // Declared constants for keys and calculator
         const calculator = document.querySelector(".calculator")
         const keys = document.querySelector(".calculator__keys");
@@ -62,10 +64,35 @@
 
                 if (action === "calculate") {
                     console.log("equal key!")
-                }
-
+                }   
+        
+            }
+        })
 
         
+
+        /*THIS SECTION OF CODE IS FOR LOGGING PRESSED KEYS INTO THE DISPLAY*/
+
+        const display = document.querySelector(".calculator__display");
+
+        keys.addEventListener("click", event =>{
+            if(event.target.matches("button")){
+                const key = event.target
+                const action = key.dataset.action
+                const keyContent = key.textContent
+                const displayedNum = display.textContent
+
+                if (!action) {
+                    if (displayedNum === "0"){
+                        display.textContent = keyContent
+                    } else {
+                        display.textContent = displayedNum + keyContent
+                    }
+                }
+
+                if (action === "decimal"){
+                    display.textContent = displayedNum + "."
+                }
             }
         })
 
