@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 </head>
 <body>
@@ -33,7 +34,7 @@
 
         /*THIS SECTION OF CODE  IS FOR LOGGING THE CALCULATOR KEYS */
         // Declared constants for keys and calculator
-        const calculator = document.querySelector(".calculator")
+        const calculator = document.querySelector(".calculator");
         const keys = document.querySelector(".calculator__keys");
 
         keys.addEventListener("click", event =>{
@@ -64,7 +65,11 @@
 
                 if (action === "calculate") {
                     console.log("equal key!")
-                }   
+                }
+
+
+                
+
         
             }
         })
@@ -81,6 +86,8 @@
                 const action = key.dataset.action
                 const keyContent = key.textContent
                 const displayedNum = display.textContent
+                const previousKeyType = calculator.dataset.previousKeyType
+                
 
                 if (!action) {
                     if (displayedNum === "0"){
@@ -93,6 +100,20 @@
                 if (action === "decimal"){
                     display.textContent = displayedNum + "."
                 }
+
+                if (
+                    action === "add" ||
+                    action === "subtract" ||
+                    action === "multiply" ||
+                    action === "divide"
+                ){
+                    key.classList.add("is-depressed")
+                    calculator.dataset.previousKeyType = "operator"
+
+                    console.log(previousKeyType) //not necessary, just shows that code is working
+
+                }    
+                
             }
         })
 
