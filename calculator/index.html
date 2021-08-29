@@ -15,16 +15,16 @@
             <button class="key__operator" data-action="subtract">-</button>
             <button class="key__operator" data-action="multiply">&times;</button>
             <button class="key__operator" data-action="divide">÷</button>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>0</button>
+            <button class="key__number">7</button>
+            <button class="key__number">8</button>
+            <button class="key__number">9</button>
+            <button class="key__number">4</button>
+            <button class="key__number">5</button>
+            <button class="key__number">6</button>
+            <button class="key__number">1</button>
+            <button class="key__number">2</button>
+            <button class="key__number">3</button>
+            <button class="key__number">0</button>
             <button data-action="decimal">.</button>
             <button data-action="clear">C</button>
             <button class= "key__equal" data-action="calculate">=</button>
@@ -32,92 +32,66 @@
     </div>
     <script>
 
-        /*THIS SECTION OF CODE  IS FOR LOGGING THE CALCULATOR KEYS */
-        // Declared constants for keys and calculator
-        const calculator = document.querySelector(".calculator");
-        const keys = document.querySelector(".calculator__keys");
+            const calculator = document.querySelector(".calculator");
+            const display = document.querySelector(".calculator__display")
+            const allKeys = document.querySelector(".calculator__keys")
 
-        keys.addEventListener("click", event =>{
-            if(event.target.matches("button")){ 
+            
+            
+            // logging the first number
+            allKeys.addEventListener("click", ()=>{
                 const key = event.target
-                const action = key.dataset.action
-
-                if(!action){
-                    console.log("number key!");
-                }
-
-                if(
-                    action == "add" ||
-                    action == "subtract"||
-                    action == "multiply"||
-                    action == "divide"
-                ){
-                 console.log("operator key!");
-                }
-
-                if(action === "decimal") {
-                    console.log("decimal key!")
-                }
-
-                if (action === "clear"){
-                    console.log("clear key!")
-                }
-
-                if (action === "calculate") {
-                    console.log("equal key!")
-                }
-
-
+                const keyValue = key.textContent
+                const action = key.dataset.action //had to read up on dataset meaning
+                const displayText = display.textContent
+                const {previousKeyType} = calculator.dataset //had to read into destructuring
+                
+                
+                
                 
 
-        
-            }
-        })
-
-        
-
-        /*THIS SECTION OF CODE IS FOR LOGGING PRESSED KEYS INTO THE DISPLAY*/
-
-        const display = document.querySelector(".calculator__display");
-
-        keys.addEventListener("click", event =>{
-            if(event.target.matches("button")){
-                const key = event.target
-                const action = key.dataset.action
-                const keyContent = key.textContent
-                const displayedNum = display.textContent
-                const previousKeyType = calculator.dataset.previousKeyType
-                
-
-                if (!action) {
-                    if (displayedNum === "0"){
-                        display.textContent = keyContent
-                    } else {
-                        display.textContent = displayedNum + keyContent
+                if (!action){
+                    if(displayText === "0"){
+                        display.textContent = keyValue
+                        console.log(display.textContent)
+                        console.log(previousKeyType)
+                    } else if (previousKeyType === "operator"){
+                        display.textContent = keyValue
                     }
+                    
+                    else {
+                        display.textContent = displayText + keyValue
+                        console.log(display.textContent)
+                    }
+                    calculator.dataset.previousKeyType = "number"   
                 }
-
-                if (action === "decimal"){
-                    display.textContent = displayedNum + "."
-                }
-
-                if (
-                    action === "add" ||
+                
+                if (action === "add" ||
                     action === "subtract" ||
                     action === "multiply" ||
-                    action === "divide"
-                ){
-                    key.classList.add("is-depressed")
-                    calculator.dataset.previousKeyType = "operator"
+                    action === "divide"){
+                        key.classList.add("is-depressed");
+                        calculator.dataset.previousKeyType = "operator"          
+                }
 
-                    console.log(previousKeyType) //not necessary, just shows that code is working
+                if(action === "decimal"){
+                    display.textContent = displayText + "."
+                }
 
-                }    
                 
-            }
-        })
+
+                
+            })
+            
+            
+        
 
 
+        
+
+    
+
+    
         
     </script>
     

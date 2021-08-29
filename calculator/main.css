@@ -1,3 +1,7 @@
 .is-depressed{
     background-color: green;
 }
+
+.calculator__memory{
+    display: none;
+}
