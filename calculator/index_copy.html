@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="calculator">
+        <div class="calculator__display">0</div>
+        <div class="calculator__keys">
+            <button class="key__operator" data-action="add">+</button>
+            <button class="key__operator" data-action="subtract">-</button>
+            <button class="key__operator" data-action="multiply">&times;</button>
+            <button class="key__operator" data-action="divide">÷</button>
+            <button class="key__number">7</button>
+            <button class="key__number">8</button>
+            <button class="key__number">9</button>
+            <button class="key__number">4</button>
+            <button class="key__number">5</button>
+            <button class="key__number">6</button>
+            <button class="key__number">1</button>
+            <button class="key__number">2</button>
+            <button class="key__number">3</button>
+            <button class="key__number">0</button>
+            <button class="key__number" data-action="decimal">.</button>
+            <button class="key__clear"  data-action="clear">C</button>
+            <button class="key__equal" data-action="calculate">=</button>
+        </div>
+    </div>
+    <script>
+
+            
+
+        //Functions to perform mathemagical calculations lol
+        function addNumbers(firstNumber, secondNumber){
+            return Number(firstNumber + secondNumber );
+        }
+
+        function subtractNumbers(firstNumber, secondNumber){
+            return Number(firstNumber - secondNumber);
+        }
+
+        function divideNumbers(firstNumber, secondNumber){
+            return Number(firstNumber/secondNumber);
+        }
+
+        function multiplyNumbers(firstNumber, secondNumber){
+            return Number(firstNumber*secondNumber);
+           }
+
+        
+            
+        
+        const numberButtons = document.querySelectorAll(".key__number");
+        const operatorButtons = document.querySelectorAll(".key__operator");
+
+        //A for-loop to log the numbers being pressed 
+        for(index = 0; index<numberButtons.length; index++){
+            numberButtons[index].addEventListener("click", ()=>{
+                console.log(event.target.innerText);
+            })
+        }
+
+        //A for-loop to log the operator keys being pressed
+        for(index = 0; index<operatorButtons.length; index++)[
+            operatorButtons[index].addEventListener("click", ()=>{
+                console.log(event.target.innerText);
+            })
+        ]
+        
+        
+
+        
+
+            
+        
+
+
+        
+
+    
+
+    
+        
+    </script>
+    
+</body>
+</html>

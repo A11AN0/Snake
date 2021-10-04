@@ -38,45 +38,57 @@
 
             
             
-            // logging the first number
+            // What to do when a key is pressed!
             allKeys.addEventListener("click", ()=>{
                 const key = event.target
                 const keyValue = key.textContent
-                const action = key.dataset.action //had to read up on dataset meaning
+                const action = key.dataset.action //justify the use of dataset
                 const displayText = display.textContent
-                const {previousKeyType} = calculator.dataset //had to read into destructuring
+                const {previousKeyType} = calculator.dataset //justify the use of dataset
+                // var firstNumber;
+                // var secondNumber;
                 
                 
                 
-                
-
+                // If the key is a number..
                 if (!action){
-                    if(displayText === "0"){
+                    if(displayText === "0" || previousKeyType === "operator"){
                         display.textContent = keyValue
                         console.log(display.textContent)
                         console.log(previousKeyType)
-                    } else if (previousKeyType === "operator"){
-                        display.textContent = keyValue
-                    }
-                    
-                    else {
+                    } else {
                         display.textContent = displayText + keyValue
                         console.log(display.textContent)
                     }
                     calculator.dataset.previousKeyType = "number"   
                 }
                 
+                // If the key is an operator.... (+, -, x, ÷)
                 if (action === "add" ||
                     action === "subtract" ||
                     action === "multiply" ||
                     action === "divide"){
                         key.classList.add("is-depressed");
-                        calculator.dataset.previousKeyType = "operator"          
+                        calculator.dataset.previousKeyType = "operator" 
+                        
+
+                            firstNumber = Number(display.textContent);
+                            console.log(firstNumber);
+                        
                 }
 
+                // If the key is a decimal....
                 if(action === "decimal"){
                     display.textContent = displayText + "."
                 }
+
+                if(action === "calculate"){
+
+                    secondNumber = Number(display.textContent);
+                    console.log(secondNumber + firstNumber);
+                }
+
+                
 
                 
 
@@ -84,11 +96,8 @@
             })
             
             
+    
         
-
-
-        
-
     
 
     
