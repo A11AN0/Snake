@@ -38,8 +38,7 @@
 
        
 
-        
-            
+         
         
         const numberButtons = document.querySelectorAll(".key__number");
         const operatorButtons = document.querySelectorAll(".key__operator");
@@ -81,11 +80,13 @@
             historyDisplay.innerText = number;
         }
 
+
         //A function which will save an operator in a area of the page lol
         function saveOperator(operator){
             operatorDisplay.innerText = operator;
         }
         
+       
 
         //A for-loop to log the numbers being pressed 
         for(index = 0; index<numberButtons.length; index++){
@@ -133,9 +134,9 @@
                             break;
 
                         case "C":
-                            printOuput("works");
-                            printHistory("also works lol");
-                            saveOperator("yup operator is gone lol");
+                            printOuput("");
+                            printHistory("");
+                            saveOperator("");
                             break;
                     }
                 }
@@ -165,6 +166,8 @@
                         divideNumbers(currentNumber, firstNumber);
                         break;
                 }
+
+                saveOperator("");
             }
 
         })
