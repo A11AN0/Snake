@@ -9,9 +9,10 @@
 </head>
 <body>
     <div class="calculator">
-        <div class="calculator__display"></div>
-        <div class="history__display"></div>
+        
+        <div class="history__display"></div> 
         <div class="operator__display"></div>
+        <div class="calculator__display"></div>
         <div class="calculator__keys">
             <button class="key__operator" data-action="add">+</button>
             <button class="key__operator" data-action="subtract">-</button>
@@ -36,9 +37,7 @@
 
             
 
-       
-
-         
+            
         
         const numberButtons = document.querySelectorAll(".key__number");
         const operatorButtons = document.querySelectorAll(".key__operator");
@@ -48,7 +47,8 @@
         const equalKey = document.querySelector(".key__equal");
 
 
-         //Functions to perform mathemagical calculations lol, each takes 2 parameters the firstNumber and the second Number
+//------------------------------------------------------------------------------------------
+//Functions to perform mathemagical calculations lol, each takes 2 parameters the firstNumber and the second Number
 
          //Addition function
          function addNumbers(firstNumber, secondNumber){
@@ -57,18 +57,22 @@
 
         //Subtraction function
         function subtractNumbers(firstNumber, secondNumber){
-            calculatorDisplay.innerText= Number(firstNumber) - Number(secondNumber);
+            calculatorDisplay.innerText= Number(secondNumber) - Number(firstNumber);
         }
 
         //Division Function
         function divideNumbers(firstNumber, secondNumber){
-            calculatorDisplay.innerText= Number(firstNumber)/Number(secondNumber);
+            calculatorDisplay.innerText= Number(secondNumber)/Number(firstNumber);
         }
 
         //Multiplication Function
         function multiplyNumbers(firstNumber, secondNumber){
             calculatorDisplay.innerText= Number(firstNumber)*Number(secondNumber);
         }
+//------------------------------------------------------------------------------------------
+
+
+
 
         //A function which prints a number onto the calculator display
         function printOuput(number){
@@ -80,13 +84,11 @@
             historyDisplay.innerText = number;
         }
 
-
         //A function which will save an operator in a area of the page lol
         function saveOperator(operator){
             operatorDisplay.innerText = operator;
         }
         
-       
 
         //A for-loop to log the numbers being pressed 
         for(index = 0; index<numberButtons.length; index++){
@@ -116,11 +118,13 @@
                 const savedOperator = operatorDisplay.innerText
                 console.log(keyValue);
 
+
                 if(calculatorDisplay.innerText != ""){
 
                     printHistory(currentDisplay); //will save the current value to history
                     printOuput(""); //will reset the output to nothing
-
+                    operatorDisplay.classList.remove("hidden");
+                    historyDisplay.classList.remove("hidden");
                     switch(symbol){
                         case "+":
                         case "-":
@@ -142,6 +146,7 @@
                 }
             })
         }
+
 
         //Event listener added to determine what happens when equal key is pressed
         equalKey.addEventListener("click", ()=>{
@@ -166,8 +171,11 @@
                         divideNumbers(currentNumber, firstNumber);
                         break;
                 }
-
                 saveOperator("");
+                operatorDisplay.classList.add("hidden");
+                historyDisplay.classList.add("hidden");
+                
+                
             }
 
         })

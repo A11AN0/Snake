@@ -2,6 +2,6 @@
     background-color: green;
 }
 
-.calculator__memory{
+.hidden{
     display: none;
 }
