@@ -3,3 +3,30 @@
     display: none;
 }
 
+.calculator{
+    &__screen{
+        *{
+            margin: 10px;
+        }
+    }
+}
+
+.calculator * {
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    font-size: 2rem;
+}
+
+.key__clear{
+    backdrop-filter: unset;
+    -webkit-backdrop-filter: unset;
+}
+
+.change__background{
+    backdrop-filter: unset;
+    -webkit-backdrop-filter: unset;
+}
+

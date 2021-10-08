@@ -106,11 +106,10 @@ for(index = 0; index<operatorButtons.length; index++){
                         }
                     break;
 
-                case "C":
+                default:
                     printOuput("");
                     printHistory("");
                     saveOperator("");
-                    break;
             }
         }
     })
