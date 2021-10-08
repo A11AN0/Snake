@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-color: lightcoral;
+}
+
+
+
+
+.hidden {display: none;}
+
+.calculator__screen {grid-area: screen;}
+
+.key__clear{grid-area: clear;}
+
+.key__equal {grid-area: equal;}
+
+.add {grid-area: addition;}
+
+.multiply {grid-area: multiplication;}
+
+.divide {grid-area: division;}
+
+.subtract {grid-area: subtraction;}
+
+.decimal {grid-area: decimal;}
+
+.zero {grid-area: zero;}
+
+.one {grid-area: one;}
+
+.two {grid-area: two;}
+
+.three {grid-area: three;}
+
+.four {grid-area: four;}
+
+.five {grid-area: five;}
+
+.six {grid-area: six;}
+
+.seven {grid-area: seven;}
+
+.eight {grid-area: eight;}
+
+.nine {grid-area: nine;}
+
+.multiply{grid-area: multiplication;}
+
+.change__background{grid-area: change-background;}
+
+
+//Grid layout for the calculator
+.calculator {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+min-height: 100vh;
+grid-template-areas: 
+". . clear change-background"
+"screen screen screen screen"
+"seven eight nine addition"
+"four five six subtraction"
+"one two three division"
+"zero zero decimal multiplication"
+"equal equal equal equal"; 
+}

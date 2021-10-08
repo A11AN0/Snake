@@ -1,5 +1,0 @@
-
-
-function notice_button(){
-    
-}

@@ -4,105 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
+    
     <title>Document</title>
 </head>
 <body>
+
+
     <div class="calculator">
-        <div class="calculator__display">0</div>
-        <div class="calculator__keys">
-            <button class="key__operator" data-action="add">+</button>
-            <button class="key__operator" data-action="subtract">-</button>
-            <button class="key__operator" data-action="multiply">&times;</button>
-            <button class="key__operator" data-action="divide">÷</button>
-            <button class="key__number">7</button>
-            <button class="key__number">8</button>
-            <button class="key__number">9</button>
-            <button class="key__number">4</button>
-            <button class="key__number">5</button>
-            <button class="key__number">6</button>
-            <button class="key__number">1</button>
-            <button class="key__number">2</button>
-            <button class="key__number">3</button>
-            <button class="key__number">0</button>
-            <button data-action="decimal">.</button>
-            <button data-action="clear">C</button>
-            <button class= "key__equal" data-action="calculate">=</button>
+        <div class="calculator__screen">
+            <div class="history__display"></div> 
+            <div class="operator__display"></div>
+            <div class="calculator__display"></div>
         </div>
-    </div>
-    <script>
-
-            const calculator = document.querySelector(".calculator");
-            const display = document.querySelector(".calculator__display")
-            const allKeys = document.querySelector(".calculator__keys")
-
-            
-            
-            // What to do when a key is pressed!
-            allKeys.addEventListener("click", ()=>{
-                const key = event.target
-                const keyValue = key.textContent
-                const action = key.dataset.action //justify the use of dataset
-                const displayText = display.textContent
-                const {previousKeyType} = calculator.dataset //justify the use of dataset
-                // var firstNumber;
-                // var secondNumber;
-                
-                
-                
-                // If the key is a number..
-                if (!action){
-                    if(displayText === "0" || previousKeyType === "operator"){
-                        display.textContent = keyValue
-                        console.log(display.textContent)
-                        console.log(previousKeyType)
-                    } else {
-                        display.textContent = displayText + keyValue
-                        console.log(display.textContent)
-                    }
-                    calculator.dataset.previousKeyType = "number"   
-                }
-                
-                // If the key is an operator.... (+, -, x, ÷)
-                if (action === "add" ||
-                    action === "subtract" ||
-                    action === "multiply" ||
-                    action === "divide"){
-                        key.classList.add("is-depressed");
-                        calculator.dataset.previousKeyType = "operator" 
-                        
-
-                            firstNumber = Number(display.textContent);
-                            console.log(firstNumber);
-                        
-                }
-
-                // If the key is a decimal....
-                if(action === "decimal"){
-                    display.textContent = displayText + "."
-                }
-
-                if(action === "calculate"){
-
-                    secondNumber = Number(display.textContent);
-                    console.log(secondNumber + firstNumber);
-                }
-
-                
-
-                
-
-                
-            })
-            
-            
-    
-        
-    
-
-    
-        
-    </script>
-    
+        <button class="key__number seven">7</button>
+        <button class="key__number eight">8</button>
+        <button class="key__number nine">9</button>
+        <button class="key__operator add" >+</button>
+        <button class="key__operator subtract" >-</button>
+        <button class="key__operator divide" >÷</button>
+        <button class="key__number four">4</button>
+        <button class="key__number five">5</button>
+        <button class="key__number six">6</button>
+        <button class="key__number one">1</button>
+        <button class="key__number two">2</button>
+        <button class="key__number three">3</button>
+        <button class="key__clear key__operator" >C</button>
+        <button class="change__background">hi</button>
+        <button class="key__equal " >=</button>
+        <button class="key__operator multiply" >x</button>
+        <button class="key__number zero">0</button>
+        <button class="key__number decimal" >.</button>
+      </div>
+  
+    <script src="app.js"></script>
 </body>
 </html>
