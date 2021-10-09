@@ -165,7 +165,7 @@ body {
 }
 .logo__link__name {
   font-size: 1.5rem;
-  font-weight: 200 bold;
+  font-weight: 300;
   text-transform: uppercase;
   text-align: center;
   justify-content: center;
@@ -192,7 +192,6 @@ a:hover {
 
 .fa-primary {
   opacity: 0.5;
-  color: rgba(16, 15, 15, 0.926);
 }
 
 @media screen and (min-width: 481px) {

@@ -6,6 +6,7 @@ const calculatorDisplay = document.querySelector(".calculator__display");
 const historyDisplay = document.querySelector(".history__display");
 const operatorDisplay = document.querySelector(".operator__display");
 const equalKey = document.querySelector(".key__equal");
+const backgroundKey = document.querySelector(".change__background");
 
 
 
@@ -151,4 +152,49 @@ equalKey.addEventListener("click", ()=>{
         
     }
 
+})
+
+//Procedure for changing background image by pressing the 'change background' button.
+//-----------------------------------------------------------------------------------------------------------
+
+backgroundKey.addEventListener("click", ()=>{
+
+    const randomNumber = Math.floor(Math.random()*6);
+    console.log(randomNumber);
+
+    //Made this function which changes the colour of the text and SVG based on the inputted parameter
+    function changeColour(colour){
+        document.querySelector("body").style.color = colour;
+        document.querySelector("svg").style.color = colour;
+        document.querySelector(".logo__link__name").style.color = colour;
+    }
+    
+    //Used switch cases to determine what the background will be changed to
+    switch(randomNumber){
+        case 0:
+            document.querySelector("body").style.backgroundImage = "url(images/watercolour-beige.jpg)";
+            changeColour("black");
+            break;
+        case 1:
+            document.querySelector("body").style.backgroundImage = "url(images/watercolour-blue.jpg)";
+            changeColour("white");
+            break;
+        case 2:
+            document.querySelector("body").style.backgroundImage = "url(images/watercolour-bluyellow.jpg)";
+            changeColour("black");
+            break;
+        case 3:
+            document.querySelector("body").style.backgroundImage = "url(images/watercolour-pink.jpg)";
+            changeColour("black");
+            break;
+        case 4:
+            document.querySelector("body").style.backgroundImage = "url(images/watercolour-red.jpg)";
+            changeColour("white");
+            break;
+        case 5:
+            document.querySelector("body").style.backgroundImage = "url(images/watercolour-pastel.jpg)";
+            changeColour("black");
+            break;
+    }
+    
 })
