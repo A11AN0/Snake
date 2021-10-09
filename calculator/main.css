@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 body {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: 1fr 11fr;
+  justify-items: center;
   align-items: center;
-  padding: 0;
-  margin: 0;
   min-height: 300px;
   height: 100vh;
   overflow-y: scroll;
@@ -154,4 +153,94 @@ body {
   background-repeat: no-repeat;
   background-position: top;
   background-attachment: fixed;
+}
+
+.logo {
+  width: 100%;
+  margin-bottom: -20vh;
+}
+
+.logo__link {
+  margin-left: 20%;
+}
+.logo__link__name {
+  font-size: 1.5rem;
+  font-weight: 200 bold;
+  text-transform: uppercase;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  bottom: -7px;
+}
+
+svg {
+  width: 2rem;
+  height: 2rem;
+  transform: rotate(180deg);
+}
+
+a {
+  color: rgba(16, 15, 15, 0.926);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(16, 15, 15, 0.926);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fa-primary {
+  opacity: 0.5;
+  color: rgba(16, 15, 15, 0.926);
+}
+
+@media screen and (min-width: 481px) {
+  svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .logo__link__name {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  svg {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .logo__link__name {
+    font-size: 3rem;
+    bottom: -13px;
+  }
+}
+@media screen and (min-width: 991px) {
+  svg {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .logo__link__name {
+    font-size: 4rem;
+    bottom: -19px;
+  }
+}
+@media screen and (max-height: 450px) {
+  .logo__link__name {
+    font-size: 1.5rem;
+    position: unset;
+  }
+
+  svg {
+    height: 2rem;
+    width: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    margin-bottom: -4px;
+    margin-top: 5px;
+  }
 }

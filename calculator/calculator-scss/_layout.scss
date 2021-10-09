@@ -1,9 +1,8 @@
 body {
-display: flex;
-justify-content: center;
+display: grid;
+grid-template-rows: 1fr 11fr;
+justify-items: center;
 align-items: center;
-padding: 0;
-margin: 0;
 min-height: 300px;
 height: 100vh;
 overflow-y: scroll;
