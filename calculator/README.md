@@ -3,7 +3,7 @@
 Hello, this is my javascript calculator project, I aim to use **HTML/SCSS, incorportating BEM conventions, and JS along with a mobile-first design approach**, to create a *responsive* and *aesthetic* web calculator app! 
 
 
-## Prototype calculator design using Figma**
+## Prototype calculator design using Figma
 https://www.figma.com/file/jejBRxPljSSllem9UDLfqq/Allan's-Javascript-Calculator?node-id=0%3A1
 ![Figma Desktop Prototype](images/figma-example.png)
 
@@ -17,10 +17,10 @@ When the '=' button is pressed, a calculation function involving both numbers as
 Furthermore, I wanted to try making a button that changes the backgroud of the calculator, and so I made a procedure which selects random backgrounds from the image by assigning them to switch cases determined by Math.random().
 
 
-## Future Improvements & Planned Bug Fixes**
+## Future Improvements & Planned Bug Fixes
 - Integration with the keyboard (currently, the user must click the on-screen buttons to use the calculator).
 - Allowing for users to log and calculate with self-inputted negative numbers.
 - Added backspace and percentage functionality.
 - Optimisation of code for maximum efficiency and readability.
 
-### Thanks for reading!-Allan :)
+#### Thanks for reading!-Allan :)
