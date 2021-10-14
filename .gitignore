@@ -1,3 +1,7 @@
 personal-website/.DS_Store
 .DS_Store
 calculator/.vscode/settings.json
+bug-tracker/.vscode/settings.json
+bug-tracker/.vscode/tasks.json
+bug-tracker/.vscode/launch.json
+bug-tracker/.vscode/c_cpp_properties.json
