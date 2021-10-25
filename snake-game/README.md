@@ -1,0 +1,1 @@
+Hello, this is the beginning of my js snake game; I will update this as i go along
