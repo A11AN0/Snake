@@ -1,4 +1,4 @@
-# Allan's Javascript Calculator
+# Javascript Snake 
 
 Hello, this is my javascript game project. I decided to make snake with  **HTML, CSS, and JS** for nostalgic purposes XD. As always, my aim is to create a functional yet aesthetic experience for players!
 
