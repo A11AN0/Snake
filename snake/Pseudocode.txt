@@ -1,2 +1,115 @@
-Snake pseudocode
+Pseudocode Steps
 
+1. Since it's probably going to be referenced alot, set a constant name for the arena
+2. A function that will draw the head of the snake on the arena and take x and y coordinates as parameters
+3. A function that will log the arrow keys pressed
+4. A function that, once provided the pressed arrow key, will change the value of the afforementioned x and y coordinates
+5. A function that will draw the snake head in the new position (given the new x/y coordinates)
+6. A function that will keep drawing the snake head moving in one direction until another arrow key is pressed, while not allowing it to reverse
+7. A function that will make x number of sections to follow the snake head while it moves
+8. A function that will draw food on a random x/y coordinate
+9. A function to make the snake grow x amount of segments when it touches the food
+10. A function to relocate the food to another random location (which is not in contact with any part of the snake)
+11. A function which causes the game to end if the snake touches its body/the edge of the arena 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Snake pseudocode Steps
+
+1. A general game loop function, one that will allow me to update the position of items on the board, it will have to return some type of counter/ value which can help set the speed of the snake on the board (when that function is finally implemented)
+
+2. A function which can log arrow key presses, and then use them to update a set of coordinates ONCE every cycle of the game loop. For the coordinates I can try using the grid area on the board
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--Future code---
+
+var lastRenderTime = 0;
+
+function gameLoop(currentTime){
+
+    window.requestAnimationFrame(gameLoop) //calls back a certain function
+    const secondsSinceLastRender = (currentTime - lastRenderTime)/1000
+    if(secondsSinceLastRender <1/2) return
+
+    lastRenderTime = currentTime
+    console.log(secondsSinceLastRender)
+
+}
+
+window.requestAnimationFrame(gameLoop)
+
+
+---------------------------------------------
+
+
+
+
+const arena = document.querySelector(".arena")
+
+function drawSnake(Xcoord, Ycoord){
+    const snake = document.createElement("div");
+    snake.style.gridColumnStart = Xcoord
+    snake.style.gridRowStart = Ycoord
+    snake.style.backgroundColor = "green"
+    arena.appendChild(snake)
+}
+
+
+var coordX = 14
+var coordY = 14
+drawSnake(coordX, coordY)
+
+document.addEventListener("keydown", (event)=>{
+    switch(event.key){
+        case "ArrowUp":
+           coordY -= 1;
+           drawSnake(coordX, coordY)
+           break;
+        case "ArrowDown":
+            coordY += 1;
+            drawSnake(coordX, coordY) 
+            break;
+        case "ArrowLeft":
+            coordX -= 1;
+            drawSnake(coordX, coordY) 
+            break;
+        case "ArrowRight":
+            coordX += 1;
+            drawSnake(coordX, coordY) 
+            break;
+    }
+})
