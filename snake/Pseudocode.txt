@@ -113,3 +113,56 @@ document.addEventListener("keydown", (event)=>{
             break;
     }
 })
+
+
+
+--------------------------------------
+//1. Since it's probably going to be referenced alot, set a constant name for the arena
+const arena = document.querySelector(".arena")
+var xCoordinate = 10; 
+var yCoordinate = 10;
+//startng coordinates for the snakeHead
+
+//2. Draw the snake on the board, and set the position using given x/y parameters
+//Probably preferrable to use an object for this..
+const drawSnakeHead = (xCoord, yCoord) =>{
+    const head = document.createElement("div");
+    head.style.gridColumnStart = xCoord
+    head.style.gridRowStart = yCoord
+    head.style.backgroundColor = "green"
+    arena.appendChild(head);
+    if(xCoord -= 1) return "left";
+    if(xCoord += 1) return "right";
+    if(yCoord -= 1) return "up";
+    if(yCoord += 1) return "down";
+}
+
+// drawSnakeHead(xCoordinate, yCoordinate);
+
+//3-4. A function that will log the arrow keys pressed and also change the x/y coordinates
+
+document.addEventListener("keydown", event =>{
+    const keyPressed = event.key
+    switch(keyPressed){
+        case "ArrowUp":
+            console.log(keyPressed)
+            yCoordinate -= 1
+
+            break;
+        case "ArrowDown":
+            console.log(keyPressed)
+            yCoordinate += 1
+            break;
+        case "ArrowLeft":
+            console.log(keyPressed)
+            xCoordinate -= 1
+            break;
+        case "ArrowRight":
+            console.log(keyPressed)
+            xCoordinate +=1
+            break;
+    }
+})
+
+
+
