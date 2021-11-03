@@ -7,8 +7,8 @@ Pseudocode Steps
 5. A function that will draw the snake head in the new position (given the new x/y coordinates)
 6. A function that will keep drawing the snake head moving in one direction until another arrow key is pressed, while not allowing it to reverse
 7. A function that will make x number of sections to follow the snake head while it moves
-8. A function that will draw food on a random x/y coordinate
 9. A function to make the snake grow x amount of segments when it touches the food
+8. A function that will draw food on a random x/y coordinate
 10. A function to relocate the food to another random location (which is not in contact with any part of the snake)
 11. A function which causes the game to end if the snake touches its body/the edge of the arena 
 
