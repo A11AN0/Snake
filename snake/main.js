@@ -31,7 +31,8 @@ const changeDirection = (event)=>{
 
 const arena = document.querySelector(".arena");
 const snakeHead = document.querySelector(".snakeHead");
-const ticTac = document.querySelector(".ticTac")
+const lossDetector = document.querySelector(".snakeHead-lossDetector");
+const ticTac = document.querySelector(".ticTac");
 var snakeGrowth = 2
 const headCoordinates = {x: 10, y:10} // Object which sets the starting coordinates for the head of the snake
 const ticTacCoordinates = {x: 14, y:14}// An object which contains the x and y coordinates of the tictac
@@ -75,7 +76,8 @@ function updateSnakeBody(){
     for(var i=snakeBody.length-1; i>= 1; i--){ //i=0, is like a type of train  carriage hence why i>=1
         snakeBody[i].style.gridColumnStart = snakeBody[i-1].style.gridColumnStart
         snakeBody[i].style.gridRowStart = snakeBody[i-1].style.gridRowStart // at least we have 1 lol
-    }    
+    }
+        
 }
 
 //This is the function which will draw the food on the board
@@ -91,7 +93,8 @@ function drawTicTac(){
 function updateTicTac(){
 
     if(headCoordinates.x === ticTacCoordinates.x && headCoordinates.y === ticTacCoordinates.y){
-        snakeGrowth += 5
+        lossDetector.style.display = "none"
+        snakeGrowth += 4
         ticTacCoordinates.x = Math.floor(Math.random() * 20) + 1
         ticTacCoordinates.y = Math.floor(Math.random() * 20) + 1
         ticTac.style.visibility = "hidden";
@@ -101,7 +104,7 @@ function updateTicTac(){
     //if headCoordinates.x
 }
 
-//This function makes sure that the ticTac doesn't respawn on the snake body, and if it detects that it does, it will perform a while loop which will use Math.floor(Math.random) to set new TicTac coordinates until the ticTac respawns without touching the snake body 
+//This function makes sure that the ticTac doesn't respawn on the snake body, and if it detects that it does, it will perform a while loop which will use Math.floor(Math.random) to set new TicTac coordinates until the ticTac respawns without touching the snake body// I can probably put this into updateTicTac()
 
 function ticTacRespawnCheck(){
     snakeBody.forEach(section =>{
@@ -117,7 +120,36 @@ function ticTacRespawnCheck(){
 
 //This is the function which will determine when or not the game is lost
 function gameLost(){
+    
+    switch(true){
+        case headCoordinates.x < 1:
+            arena.style.backgroundColor = "red";
+        break;  
+        case headCoordinates.x > 21:
+            arena.style.backgroundColor = "red";
+        break;
+        case headCoordinates.y < 1:
+            arena.style.backgroundColor = "red";
+        break;
+        case headCoordinates.y > 21:
+            arena.style.backgroundColor = "red";
+        break;
+    }
+    
+    lossDetector.style.display = "initial"
+    lossDetector.style.backgroundColor = "pink"
+    lossDetector.style.gridColumnStart = headCoordinates.x
+    lossDetector.style.gridRowStart = headCoordinates.y
+    
 
+
+    snakeBody.forEach(section =>{
+        if( section.style.gridColumnStart == lossDetector.style.gridColumnStart && section.style.gridRowStart == lossDetector.style.gridRowStart && snakeBody.indexOf(section)>1  ){
+            arena.style.backgroundColor = "red"
+        }
+    })
+    
+    
 }
 
 //This function will give option to replay if the game is lost
@@ -148,10 +180,12 @@ const mainGame = (timeStamp) =>{
 updateSnakeHead();//at least we know it works lol
 drawSnakeHead();
 drawTicTac();
+gameLost();
 updateTicTac();
 ticTacRespawnCheck();
 updateSnakeBody();//slightly more responsive/quicker like this
 drawSnakeBody(); //will need to make function so that if food is found, snakebody[] length increases
+
 
 document.addEventListener("keydown", changeDirection)
 
