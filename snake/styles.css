@@ -33,3 +33,13 @@ body{
     width: 95vw;
 
 }
+
+.snakeHead{
+    z-index: 2;
+}
+
+
+
+.ticTac{
+    z-index: 3;
+}

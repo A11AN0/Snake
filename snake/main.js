@@ -31,8 +31,10 @@ const changeDirection = (event)=>{
 
 const arena = document.querySelector(".arena");
 const snakeHead = document.querySelector(".snakeHead");
+const ticTac = document.querySelector(".ticTac")
 const snakeGrowth = 7
 const headCoordinates = {x: 10, y:10} // Object which sets the starting coordinates for the head of the snake
+const ticTacCoordinates = {x: 14, y:14}// An object which contains the x and y coordinates of the tictac
 const travelDirection = {x:0, y:0} // Object which sets the travel direction for the head of the snake
 const snakeBody = [] // Array for the body of the snake
 
@@ -78,12 +80,24 @@ function updateSnakeBody(){
 
 //This is the function which will draw the food on the board
 function drawTicTac(){
-
+    //will change so that it draws somewhere random
+    ticTac.style.gridColumnStart = ticTacCoordinates.x
+    ticTac.style.gridRowStart = ticTacCoordinates.y
+    ticTac.style.visibility = "visible";
+    ticTac.style.backgroundColor = "yellow";
 }
 
-//This is the function which will update the position of the food on the board
+//This is the function which will update the position of the food on the board between 0 and the board width, hence why the +1 makes it in between 1-21 for the x/y coordinates
 function updateTicTac(){
 
+    if(headCoordinates.x === ticTacCoordinates.x && headCoordinates.y === ticTacCoordinates.y){
+        ticTacCoordinates.x = Math.floor(Math.random() * 20) + 1
+        ticTacCoordinates.y = Math.floor(Math.random() * 20) + 1
+        ticTac.style.visibility = "hidden";
+        console.log(true)
+    } 
+
+    //if headCoordinates.x
 }
 
 //This is the function which will determine when or not the game is lost
@@ -110,7 +124,7 @@ let previousTimeStamp = 0
 const mainGame = (timeStamp) =>{ 
     window.requestAnimationFrame(mainGame)
     const timepassed = (timeStamp - previousTimeStamp)/1000
-    if(timepassed <1/4) return //sets the speed at which screen refreshes/FPS
+    if(timepassed <1/10) return //sets the speed at which screen refreshes/FPS
     previousTimeStamp = timeStamp
 
 //---------------------//Code for item movemement goes in between here//--------------------------------------
@@ -118,6 +132,8 @@ const mainGame = (timeStamp) =>{
 
 updateSnakeHead();//at least we know it works lol
 drawSnakeHead();
+drawTicTac();
+updateTicTac();
 updateSnakeBody();//slightly more responsive/quicker like this
 drawSnakeBody(); //will need to make function so that if food is found, snakebody[] length increases
 
