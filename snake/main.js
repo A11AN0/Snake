@@ -33,7 +33,9 @@ const arena = document.querySelector(".arena");
 const snakeHead = document.querySelector(".snakeHead");
 const lossDetector = document.querySelector(".snakeHead-lossDetector");
 const ticTac = document.querySelector(".ticTac");
+const restartButton = document.querySelector(".restart");
 var snakeGrowth = 2
+var score = 0
 const headCoordinates = {x: 10, y:10} // Object which sets the starting coordinates for the head of the snake
 const ticTacCoordinates = {x: 14, y:14}// An object which contains the x and y coordinates of the tictac
 const travelDirection = {x:0, y:0} // Object which sets the travel direction for the head of the snake
@@ -93,12 +95,11 @@ function drawTicTac(){
 function updateTicTac(){
 
     if(headCoordinates.x === ticTacCoordinates.x && headCoordinates.y === ticTacCoordinates.y){
-        lossDetector.style.display = "none"
-        snakeGrowth += 4
+        snakeGrowth += 1
         ticTacCoordinates.x = Math.floor(Math.random() * 20) + 1
         ticTacCoordinates.y = Math.floor(Math.random() * 20) + 1
         ticTac.style.visibility = "hidden";
-        console.log(true)
+        keepScore();
     } 
 
     //if headCoordinates.x
@@ -121,22 +122,24 @@ function ticTacRespawnCheck(){
 //This is the function which will determine when or not the game is lost
 function gameLost(){
     
+    var lostOrNah;
+
     switch(true){
         case headCoordinates.x < 1:
-            arena.style.backgroundColor = "red";
+            lostOrNah = "yes"
         break;  
         case headCoordinates.x > 21:
-            arena.style.backgroundColor = "red";
+            lostOrNah = "yes"
         break;
         case headCoordinates.y < 1:
-            arena.style.backgroundColor = "red";
+            lostOrNah = "yes"
         break;
         case headCoordinates.y > 21:
-            arena.style.backgroundColor = "red";
+            lostOrNah = "yes"
         break;
     }
     
-    lossDetector.style.display = "initial"
+    lossDetector.style.display = "initial" //lossDetector has effect only when scanning for head contact with the snake body
     lossDetector.style.backgroundColor = "pink"
     lossDetector.style.gridColumnStart = headCoordinates.x
     lossDetector.style.gridRowStart = headCoordinates.y
@@ -145,22 +148,27 @@ function gameLost(){
 
     snakeBody.forEach(section =>{
         if( section.style.gridColumnStart == lossDetector.style.gridColumnStart && section.style.gridRowStart == lossDetector.style.gridRowStart && snakeBody.indexOf(section)>1  ){
-            arena.style.backgroundColor = "red"
+            lostOrNah = "yes"
         }
     })
-    
+    lossDetector.style.display = "none" //lossDetector has no effect after scanning for head contact with the snake body, hence will not intefere with other functions in the program
+    return lostOrNah
     
 }
 
-//This function will give option to replay if the game is lost
-function replay(){
 
-}
 
 //This function will keep and record score while the game progresses
 function keepScore(){
-
+    const scoreCard = document.querySelector(".score");
+    const newScore = score +=10
+    scoreCard.innerHTML = `Score: ${newScore}`
 }
+
+
+    
+    
+
 
 
 
@@ -178,9 +186,15 @@ const mainGame = (timeStamp) =>{
 
 
 updateSnakeHead();//at least we know it works lol
+if(gameLost() === "yes"){
+    arena.style.display = "none"
+    restartButton.style.display = "initial"
+    restartButton.addEventListener("click", ()=>{
+        window.location = "/"
+    })
+}
 drawSnakeHead();
 drawTicTac();
-gameLost();
 updateTicTac();
 ticTacRespawnCheck();
 updateSnakeBody();//slightly more responsive/quicker like this

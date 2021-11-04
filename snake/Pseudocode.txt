@@ -35,6 +35,7 @@ Pseudocode Steps
 
 
 
+
 Snake pseudocode Steps
 
 1. A general game loop function, one that will allow me to update the position of items on the board, it will have to return some type of counter/ value which can help set the speed of the snake on the board (when that function is finally implemented)
@@ -164,5 +165,28 @@ document.addEventListener("keydown", event =>{
     }
 })
 
+
+
+
+
+
+
+lossDetector.style.display = "initial" //lossDetector has effect only when scanning for head contact with the snake body
+    lossDetector.style.backgroundColor = "pink"
+    lossDetector.style.gridColumnStart = headCoordinates.x
+    lossDetector.style.gridRowStart = headCoordinates.y
+    
+
+
+    snakeBody.forEach(section =>{
+        if( section.style.gridColumnStart == lossDetector.style.gridColumnStart && section.style.gridRowStart == lossDetector.style.gridRowStart && snakeBody.indexOf(section)>1  ){
+            lostOrNah = "yes"
+        }
+    })
+    lossDetector.style.display = "none" //lossDetector has no effect after scanning for head contact with the snake body, hence will not intefere with other functions in the program
+
+
+----------------------------------------------------------------------
+need to find a way for this to end the game
 
 

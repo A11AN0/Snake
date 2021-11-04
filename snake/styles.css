@@ -43,3 +43,7 @@ body{
 .ticTac{
     z-index: 3;
 }
+
+.restart{
+    display: none;
+}
