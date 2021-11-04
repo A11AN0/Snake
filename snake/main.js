@@ -32,7 +32,7 @@ const changeDirection = (event)=>{
 const arena = document.querySelector(".arena");
 const snakeHead = document.querySelector(".snakeHead");
 const ticTac = document.querySelector(".ticTac")
-const snakeGrowth = 7
+var snakeGrowth = 2
 const headCoordinates = {x: 10, y:10} // Object which sets the starting coordinates for the head of the snake
 const ticTacCoordinates = {x: 14, y:14}// An object which contains the x and y coordinates of the tictac
 const travelDirection = {x:0, y:0} // Object which sets the travel direction for the head of the snake
@@ -91,6 +91,7 @@ function drawTicTac(){
 function updateTicTac(){
 
     if(headCoordinates.x === ticTacCoordinates.x && headCoordinates.y === ticTacCoordinates.y){
+        snakeGrowth += 5
         ticTacCoordinates.x = Math.floor(Math.random() * 20) + 1
         ticTacCoordinates.y = Math.floor(Math.random() * 20) + 1
         ticTac.style.visibility = "hidden";
@@ -98,6 +99,20 @@ function updateTicTac(){
     } 
 
     //if headCoordinates.x
+}
+
+//This function makes sure that the ticTac doesn't respawn on the snake body, and if it detects that it does, it will perform a while loop which will use Math.floor(Math.random) to set new TicTac coordinates until the ticTac respawns without touching the snake body 
+
+function ticTacRespawnCheck(){
+    snakeBody.forEach(section =>{
+        while (section.style.gridColumnStart == ticTacCoordinates.x 
+            && section.style.gridRowStart == ticTacCoordinates.y){
+                ticTacCoordinates.x = Math.floor(Math.random() * 20) + 1
+                ticTacCoordinates.y = Math.floor(Math.random() * 20) + 1
+                return;
+            }
+        
+    })
 }
 
 //This is the function which will determine when or not the game is lost
@@ -124,7 +139,7 @@ let previousTimeStamp = 0
 const mainGame = (timeStamp) =>{ 
     window.requestAnimationFrame(mainGame)
     const timepassed = (timeStamp - previousTimeStamp)/1000
-    if(timepassed <1/10) return //sets the speed at which screen refreshes/FPS
+    if(timepassed <1/7) return //sets the speed at which screen refreshes/FPS
     previousTimeStamp = timeStamp
 
 //---------------------//Code for item movemement goes in between here//--------------------------------------
@@ -134,6 +149,7 @@ updateSnakeHead();//at least we know it works lol
 drawSnakeHead();
 drawTicTac();
 updateTicTac();
+ticTacRespawnCheck();
 updateSnakeBody();//slightly more responsive/quicker like this
 drawSnakeBody(); //will need to make function so that if food is found, snakebody[] length increases
 
