@@ -35,6 +35,7 @@ const lossDetector = document.querySelector(".snakeHead-lossDetector");
 const ticTac = document.querySelector(".ticTac");
 const restartButton = document.querySelector(".restart");
 var snakeGrowth = 2
+var snakeSpeed = 7
 var score = 0
 const headCoordinates = {x: 10, y:10} // Object which sets the starting coordinates for the head of the snake
 const ticTacCoordinates = {x: 14, y:14}// An object which contains the x and y coordinates of the tictac
@@ -45,7 +46,7 @@ const snakeBody = [] // Array for the body of the snake
 
 //This is a function which draws the head of my snake // although since it's already in arena div, might come back and remove this function (probs not tho)
 function drawSnakeHead(){
-    snakeHead.style.backgroundColor = "green"
+    snakeHead.style.backgroundColor = "black"
     snakeHead.style.gridColumnStart = headCoordinates.x
     snakeHead.style.gridRowStart = headCoordinates.y
 }
@@ -60,12 +61,11 @@ function updateSnakeHead(){
 }
 
 
-
 //This is the function which will draw the body of my snake
 function drawSnakeBody(){
     if(snakeBody.length<snakeGrowth){ // sets number of segments on snake (number of segments = value)
     const section = document.createElement("div");
-    section.style.backgroundColor = "red"
+    section.style.backgroundColor = "black"
     section.style.gridColumnStart = headCoordinates.x 
     section.style.gridRowStart = headCoordinates.y
     arena.appendChild(section);
@@ -88,7 +88,6 @@ function drawTicTac(){
     ticTac.style.gridColumnStart = ticTacCoordinates.x
     ticTac.style.gridRowStart = ticTacCoordinates.y
     ticTac.style.visibility = "visible";
-    ticTac.style.backgroundColor = "yellow";
 }
 
 //This is the function which will update the position of the food on the board between 0 and the board width, hence why the +1 makes it in between 1-21 for the x/y coordinates
@@ -99,6 +98,7 @@ function updateTicTac(){
         ticTacCoordinates.x = Math.floor(Math.random() * 20) + 1
         ticTacCoordinates.y = Math.floor(Math.random() * 20) + 1
         ticTac.style.visibility = "hidden";
+        snakeSpeed += 0.5
         keepScore();
     } 
 
@@ -162,24 +162,37 @@ function gameLost(){
 function keepScore(){
     const scoreCard = document.querySelector(".score");
     const newScore = score +=10
-    scoreCard.innerHTML = `Score: ${newScore}`
+    scoreCard.innerHTML = `SCORE: ${newScore}`
 }
 
-
+function animateMenu(){
+    const menuElement = document.querySelector(".elements");
+    const body = document.querySelector("body");
+    menuElement.style.transition = `1000ms`
+    menuElement.style.marginTop = `40vh`
+    body.style.backdropFilter = "blur(5px)";
+    body.style.webkitBackdropFilter = "blur(5px)";
     
+
+}
     
+function fadeIn(){
+    const html = document.querySelector("html");
+    html.style.opacity = 50   
+}   
 
-
+fadeIn();
 
 
 
 let previousTimeStamp = 0
 
+
 //This one was interesting to read online about, this is the game loop I made using window.requestAnimationFrame
 const mainGame = (timeStamp) =>{ 
     window.requestAnimationFrame(mainGame)
     const timepassed = (timeStamp - previousTimeStamp)/1000
-    if(timepassed <1/7) return //sets the speed at which screen refreshes/FPS
+    if(timepassed <1/snakeSpeed) return //sets the speed at which screen refreshes/FPS
     previousTimeStamp = timeStamp
 
 //---------------------//Code for item movemement goes in between here//--------------------------------------
@@ -189,10 +202,14 @@ updateSnakeHead();//at least we know it works lol
 if(gameLost() === "yes"){
     arena.style.display = "none"
     restartButton.style.display = "initial"
+    travelDirection.x = 0
+    travelDirection.y = 0
+    animateMenu();
     restartButton.addEventListener("click", ()=>{
         window.location = "/"
     })
 }
+
 drawSnakeHead();
 drawTicTac();
 updateTicTac();

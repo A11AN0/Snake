@@ -1,0 +1,51 @@
+.arena{
+    display: grid;
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+    height: 80vh;
+    width: 80vw;
+    margin: 10px;
+    border-radius: 5px;
+    border: black solid 2px;
+
+    backdrop-filter: blur;
+    -webkit-backdrop-filter: blur(1px);
+
+    *{
+        border-radius: 5px;    
+    }
+}
+
+.snakeHead{
+    z-index: 2;
+}
+
+
+
+.ticTac{
+    z-index: 3;
+    text-align: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+@media screen and (min-width: 768px){
+
+    .ticTac{
+        font-size: 150%;
+    }
+
+}
+
+@media screen and (max-height: 450px) {
+    
+    .ticTac{
+        font-size: 100%;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .ticTac{
+        font-size: 80%;
+    }
+  }

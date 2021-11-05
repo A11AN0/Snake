@@ -160,7 +160,6 @@ body {
 body {
   background-image: url("../images/watercolour-bluyellow.jpg");
   transition: 400ms ease;
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
   background-attachment: fixed;
