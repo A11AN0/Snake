@@ -1,3 +1,5 @@
+
+
 // function which when given an event, (a keydown/keypress), changes the travel direction {} 
 const changeDirection = (event)=>{
     const keyPressed = event.key
@@ -28,7 +30,6 @@ const changeDirection = (event)=>{
     }
 }
 
-
 const arena = document.querySelector(".arena");
 const snakeHead = document.querySelector(".snakeHead");
 const lossDetector = document.querySelector(".snakeHead-lossDetector");
@@ -41,6 +42,9 @@ const headCoordinates = {x: 10, y:10} // Object which sets the starting coordina
 const ticTacCoordinates = {x: 14, y:14}// An object which contains the x and y coordinates of the tictac
 const travelDirection = {x:0, y:0} // Object which sets the travel direction for the head of the snake
 const snakeBody = [] // Array for the body of the snake
+
+
+
 
 
 
@@ -165,6 +169,7 @@ function keepScore(){
     scoreCard.innerHTML = `SCORE: ${newScore}`
 }
 
+//This function brings down the menu/score bar (will implement to run after game is lost)
 function animateMenu(){
     const menuElement = document.querySelector(".elements");
     const body = document.querySelector("body");
@@ -175,7 +180,8 @@ function animateMenu(){
     
 
 }
-    
+ 
+//This function will give a smooth intro transition when the game is restarted/loaded
 function fadeIn(){
     const html = document.querySelector("html");
     html.style.opacity = 50   

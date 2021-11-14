@@ -1,4 +1,4 @@
-# Allan's Javascript Calculator
+# Vanilla Javascript Calculator
 
 Hello, this is my javascript calculator project, I aim to use **HTML/SCSS, incorportating BEM conventions, and JS along with a mobile-first design approach**, to create a *responsive* and *aesthetic* web calculator app! 
 

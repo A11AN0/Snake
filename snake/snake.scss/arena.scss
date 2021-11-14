@@ -1,6 +1,7 @@
 .arena{
     display: grid;
     grid-template-rows: repeat(21, 1fr);
+    grid-gap: 1px;
     grid-template-columns: repeat(21, 1fr);
     height: 80vh;
     width: 80vw;
