@@ -12,10 +12,23 @@ https://www.figma.com/file/CJqVFn4djOuKkD7TCPefoV/Allan's-JS-Snake-Game?node-id=
 
 
 ## More about this project
-This game of snake relies on the assignment of an event listener to the pressing of arrow keys on the keyboard to change the properties of the travel direction object, which determines the direction in which the snake is travelling. The relationship between the arrow key pressed and the assigned travel direction of the snake, is decided by a switch case as defined within the function changeDirection(). The space within which the snake moves, an 'arena', was 
+This game works by drawing a snake and a tictac upon an arena at specific coordinates. This is possible because the arena is made into a grid by CSS. The coordinates of each item within this arena are determined by a respective 'coordinate' object which manipulates the x-coordinate (gridColumnStart) and x coordinate(gridRowStart) of its respective div within the arena.
 
+Since this game of snake relies on keypress events (specifically of the arrow keys), a function called changeDirection, uses an event listener for a key press, along with a switch case to change the travel direction if certain conditions are met.
+
+The most important part of snake, is the ability of the snake to grow when it consumes its food! I was able to achieve this by creating a snakebody array of segments(divs), manipulating the x coordinate and y coordinates (gridColumnStart & gridRowStart) of each via a for loop, and then appending it to the arena, when the snake head had the same 'coordinates' as the tictac.
+
+The tictac, was then assigned to another random location not in contact with the snake, using a combination of Math.floor, Math.random, and a trusty while() loop.
+
+It is important to note that constant updating of the snake's position and body, was achieved through defining a game function which called window.requestAnimationFrame(), and then calling window.requestAnimationFrame() with the game function as a callback parameter, in order to loop.
+
+-There is more info in the main.js file!
 
 ## Future Improvements & Planned Bug Fixes
-Coming soon!
+- Planned on screen buttons for mobile users
+- Improved responsivity, and ratio for arena for smaller screens
+- Sound to be played when snake consumes food!
+- Refactoring of code, for readability and reusability
+ 
 
 #### Thanks for reading!-Allan :)
