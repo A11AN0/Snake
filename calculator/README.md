@@ -7,7 +7,8 @@ Hello, this is my javascript calculator project, I aim to use **HTML/SCSS, incor
 https://www.figma.com/file/jejBRxPljSSllem9UDLfqq/Allan's-Javascript-Calculator?node-id=0%3A1
 ![Figma Desktop Prototype](images/figma-example.png)
 
-
+## Final Appearance of Calculator
+![Final Calculator Design](images/realCalculator.png)
 
 ## More about this project
 This calculator is a simple Javascript project which used on-screen keys to log numbers upon clicking. Each key is assigned an event listener for clicking. Series of numbers clicked appear in the calculator display. If the series of digits logged before an operator key are clicked, they were saved in  <span class="history__display "></span> while the series of numbers pressed afterwards remained in <span class="calculator__display"></span>. 
