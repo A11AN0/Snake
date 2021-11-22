@@ -126,7 +126,7 @@ function ticTacRespawnCheck(){
 //This is the function which will determine when or not the game is lost
 function gameLost(){
     
-    var lostOrNah;
+    let lostOrNah;
 
     switch(true){
         case headCoordinates.x < 1:
