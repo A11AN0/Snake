@@ -1,70 +1,52 @@
-
-body{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url("/images/blue-painting.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("https://a11an0.github.io/Snake/images/blue-painting.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.elements{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 15vh;
-    width: 95vw;
-    justify-items: center;
-    align-items: center;
-    font-weight: 200;
+.elements {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 15vh;
+  width: 95vw;
+  justify-items: center;
+  align-items: center;
+  font-weight: 200;
 }
 
+.restart {
+  display: none;
+  cursor: pointer;
+  font-size: 7vw;
+  transition: 300ms;
 
-.restart{
-    display: none;
-    cursor: pointer;
-    font-size: 7vw;
+  :hover {
     transition: 300ms;
-
-    :hover{
-        transition: 300ms;
-        font-size: 8vw;    
-    }
-
+    font-size: 8vw;
+  }
 }
 
-
-
-
-
-@media screen and (min-width: 481px){
-
-    .score{
-        font-size: 30px;
-    }
-
-
+@media screen and (min-width: 481px) {
+  .score {
+    font-size: 30px;
+  }
 }
 
-
-@media screen and (min-width: 768px){
-
-    .score{
-        font-size: 45px;
-    }
-
+@media screen and (min-width: 768px) {
+  .score {
+    font-size: 45px;
+  }
 }
 
-
-@media screen and (min-width: 991px){
-    
-    .score {
-      font-size: 65px;
-    }
+@media screen and (min-width: 991px) {
+  .score {
+    font-size: 65px;
+  }
 }
-
-
-
