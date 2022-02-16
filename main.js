@@ -203,7 +203,7 @@ const mainGame = (timeStamp) => {
     travelDirection.y = 0;
     animateMenu();
     restartButton.addEventListener("click", () => {
-      location.reload();
+      window.location = window.location.href;
     });
   }
 
