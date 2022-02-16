@@ -217,7 +217,7 @@ const mainGame = (timeStamp) => {
   document.addEventListener("keydown", changeDirection);
 
   //------------------------------------------------------------
-  // console.log(timepassed)//simply logs timepassed/ was a test that the game loop works.
+  // console.log(timepassed)//simply logs timepassed/ was a test that the game loop works
 };
 
 window.requestAnimationFrame(mainGame);
