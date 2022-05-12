@@ -1,7 +1,7 @@
 # Snake
 
 <p align="center">
-  <img src="./styles/images/howItTurnedOut.png" alt="Snake Demo">
+  <img src="./images/howItTurnedOut.png" alt="Snake Demo">
 </p>
 
 ### Hello, this is my vanilla javascript game. When deciding on a game to make with HTML, CSS, and JS, I realised that for nostalgic purposes, it had to be 'snake' XD. As always, my aim is to create a functional yet aesthetic experience for players!
@@ -15,7 +15,7 @@ However, this game of snake has a twist because whenever the snake eats food, it
 ---
 
 <p align="center">
-  <img src="./styles/images/snakeGif.gif" alt="Snake game gif">
+  <img src="./images/snakeGif.gif" alt="Snake game gif">
 </p>
 
 ---
